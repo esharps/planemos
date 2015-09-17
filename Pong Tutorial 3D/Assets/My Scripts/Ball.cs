@@ -4,19 +4,26 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
 	public float ballInitVel = 600f;
-	public float startDelay = 10f;
+	public float startDelay = 2f;
 	public GameConroller gc;
 	public Vector3 startPos;
 	public float xBound;
 	public float yBound;
+	public Vector3 eulerAngleVelocity;
 
-	private Rigidbody rb;
-	private bool ballInPlay;
+	private Rigidbody thisRigidBody;
+	private bool ballInPlay = false;
+	private int volleyCount = 0;
 
 
 	// Use this for initialization
 	void Awake () {
-		rb = GetComponent<Rigidbody> ();
+		thisRigidBody = GetComponent<Rigidbody> ();
+		eulerAngleVelocity = new Vector3(
+				Random.Range (-200, 200), 
+				Random.Range (-200, 200), 
+				Random.Range (-200, 200)
+			);
 	}
 
 	void Start(){
@@ -27,7 +34,12 @@ public class Ball : MonoBehaviour {
 			Debug.Log ("Cannot find 'GameController' script.");
 		}
 	}
-	// 36000 = x2 + y2
+
+	void FixedUpdate(){
+		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
+		thisRigidBody.MoveRotation(thisRigidBody.rotation * deltaRotation);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (!ballInPlay) {
@@ -36,6 +48,12 @@ public class Ball : MonoBehaviour {
 		}
 
 		else {
+			if( volleyCount > 3 ){
+				volleyCount = 0;
+				Vector3 currentVel = thisRigidBody.velocity;
+				Vector3 newVel = new Vector3(currentVel.x + Mathf.Sign(currentVel.x) * 5.0f, currentVel.y + Mathf.Sign(currentVel.y) * 5.0f, 0);
+				thisRigidBody.velocity = newVel;
+			}
 			if(transform.position.y > yBound)
 				transform.position = new Vector3(transform.position.x, -yBound, 0);
 			if(transform.position.y < -yBound)
@@ -57,19 +75,30 @@ public class Ball : MonoBehaviour {
 
 	IEnumerator startBall(){
 		yield return new WaitForSeconds(startDelay);
+		eulerAngleVelocity = new Vector3(
+			Random.Range (-200, 200), 
+			Random.Range (-200, 200), 
+			Random.Range (-200, 200)
+			);
 		float x = Random.Range (-1.0f, 1.0f);
-		float y = Random.Range (-1.0f, 1.0f);
-		Vector3 direction = new Vector3(x, y, 0);
+		float y = Random.Range (-0.25f, 0.25f);
+		Vector3 direction = new Vector3(x, y, 0).normalized;
 		direction = direction.normalized * ballInitVel;
-		rb.AddForce(direction);
+		thisRigidBody.AddForce(direction);
 	}
 
 	void resetBall(){
-		rb.velocity = new Vector3(0,0,0);
+		eulerAngleVelocity = new Vector3 ();
+		thisRigidBody.velocity = new Vector3(0,0,0);
 		transform.position = startPos;
+		volleyCount = 0;
 	}
 
 	public bool isMovingTowardEnemy(){
-		return rb.velocity.x < 0;
+		return thisRigidBody.velocity.x < 0;
+	}
+
+	void OnCollisionEnter( Collision coll ){
+		volleyCount++;
 	}
 }
