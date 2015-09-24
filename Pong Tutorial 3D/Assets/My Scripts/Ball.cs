@@ -19,11 +19,6 @@ public class Ball : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		thisRigidBody = GetComponent<Rigidbody> ();
-		eulerAngleVelocity = new Vector3(
-				Random.Range (-200, 200), 
-				Random.Range (-200, 200), 
-				Random.Range (-200, 200)
-			);
 	}
 
 	void Start(){
@@ -54,10 +49,10 @@ public class Ball : MonoBehaviour {
 				Vector3 newVel = new Vector3(currentVel.x + Mathf.Sign(currentVel.x) * 5.0f, currentVel.y + Mathf.Sign(currentVel.y) * 5.0f, 0);
 				thisRigidBody.velocity = newVel;
 			}
-			if(transform.position.y > yBound)
-				transform.position = new Vector3(transform.position.x, -yBound, 0);
-			if(transform.position.y < -yBound)
-				transform.position = new Vector3(transform.position.x, yBound, 0);
+//			if(transform.position.y > yBound)
+//				transform.position = new Vector3(transform.position.x, -yBound, 0);
+//			if(transform.position.y < -yBound)
+//				transform.position = new Vector3(transform.position.x, yBound, 0);
 			if(transform.position.x < -xBound)
 			{
 				gc.incPlayerScore();
@@ -80,7 +75,7 @@ public class Ball : MonoBehaviour {
 			Random.Range (-200, 200), 
 			Random.Range (-200, 200)
 			);
-		float x = Random.Range (-1.0f, 1.0f);
+		float x = Mathf.Sign(Random.Range (-1.0f, 1.0f));
 		float y = Random.Range (-0.25f, 0.25f);
 		Vector3 direction = new Vector3(x, y, 0).normalized;
 		direction = direction.normalized * ballInitVel;
@@ -88,8 +83,8 @@ public class Ball : MonoBehaviour {
 	}
 
 	void resetBall(){
-		eulerAngleVelocity = new Vector3 ();
-		thisRigidBody.velocity = new Vector3(0,0,0);
+		eulerAngleVelocity = Vector3.zero;
+		thisRigidBody.velocity = Vector3.zero;
 		transform.position = startPos;
 		volleyCount = 0;
 	}
@@ -99,6 +94,7 @@ public class Ball : MonoBehaviour {
 	}
 
 	void OnCollisionEnter( Collision coll ){
-		volleyCount++;
+		if(coll.gameObject.CompareTag ("Paddle"))
+			volleyCount++;
 	}
 }

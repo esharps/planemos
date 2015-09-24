@@ -31,7 +31,7 @@ public class EnemyPaddle : MonoBehaviour {
 			if (yPos > 0)
 				yPos -= paddleSpeed * 0.1f;
 		}
-		transform.position = new Vector3(-20, yPos, 0);
+		transform.position = new Vector3(-20, Mathf.Clamp(yPos, -12.5f, 12.5f), 0);
 	}
 
 	bool ballIsTooClose(){
