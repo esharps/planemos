@@ -5,8 +5,8 @@ public class GameConroller : MonoBehaviour {
 
 	public int playerScore;
 	public int enemyScore;
-	public GUIText playerScoreText;
-	public GUIText enemyScoreText;
+//	public GUIText playerScoreText;
+//	public GUIText enemyScoreText;
 
 
 
@@ -19,8 +19,8 @@ public class GameConroller : MonoBehaviour {
 
 	// Update is called once per frame
 	void UpdateScore () {
-		playerScoreText.text = "" + playerScore;
-		enemyScoreText.text = "" + enemyScore; 
+//		playerScoreText.text = "" + playerScore;
+//		enemyScoreText.text = "" + enemyScore; 
 	}
 
 
@@ -33,6 +33,4 @@ public class GameConroller : MonoBehaviour {
 		enemyScore++;
 		UpdateScore ();
 	}
-	
-
 }

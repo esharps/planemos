@@ -7,8 +7,8 @@ public class Ball : MonoBehaviour {
 	public float startDelay = 2f;
 	public GameConroller gc;
 	public Vector3 startPos;
+	public float zBound;
 	public float xBound;
-	public float yBound;
 	public Vector3 eulerAngleVelocity;
 
 	private Rigidbody thisRigidBody;
@@ -46,22 +46,18 @@ public class Ball : MonoBehaviour {
 			if( volleyCount > 3 ){
 				volleyCount = 0;
 				Vector3 currentVel = thisRigidBody.velocity;
-				Vector3 newVel = new Vector3(currentVel.x + Mathf.Sign(currentVel.x) * 5.0f, currentVel.y + Mathf.Sign(currentVel.y) * 5.0f, 0);
+				Vector3 newVel = new Vector3(currentVel.x + Mathf.Sign(currentVel.x) * 5.0f, 0, currentVel.z + Mathf.Sign(currentVel.z) * 5.0f);
 				thisRigidBody.velocity = newVel;
 			}
-//			if(transform.position.y > yBound)
-//				transform.position = new Vector3(transform.position.x, -yBound, 0);
-//			if(transform.position.y < -yBound)
-//				transform.position = new Vector3(transform.position.x, yBound, 0);
-			if(transform.position.x < -xBound)
+			if(transform.position.z < -zBound)
 			{
-				gc.incPlayerScore();
+//				gc.incPlayerScore();
 				resetBall();
 				ballInPlay = false;
 			}
-			if(transform.position.x > xBound)
+			if(transform.position.z > zBound)
 			{
-				gc.incEnemyScore();
+//				gc.incEnemyScore();
 				resetBall();
 				ballInPlay = false;
 			}
@@ -75,9 +71,9 @@ public class Ball : MonoBehaviour {
 			Random.Range (-200, 200), 
 			Random.Range (-200, 200)
 			);
-		float x = Mathf.Sign(Random.Range (-1.0f, 1.0f));
-		float y = Random.Range (-0.25f, 0.25f);
-		Vector3 direction = new Vector3(x, y, 0).normalized;
+		float x = Random.Range (-0.5f, 0.5f);
+		float z = Mathf.Sign(Random.Range (-1.0f, 1.0f));
+		Vector3 direction = new Vector3(x, 0, z).normalized;
 		direction = direction.normalized * ballInitVel;
 		thisRigidBody.AddForce(direction);
 	}
@@ -90,7 +86,7 @@ public class Ball : MonoBehaviour {
 	}
 
 	public bool isMovingTowardEnemy(){
-		return thisRigidBody.velocity.x < 0;
+		return thisRigidBody.velocity.z > 0;
 	}
 
 	void OnCollisionEnter( Collision coll ){

@@ -29,12 +29,7 @@ GameObject:
   - 23: {fileID: 2301442}
   - 54: {fileID: 5489910}
   - 65: {fileID: 6587190}
-  - 114: {fileID: 11480150}
-  - 114: {fileID: 11407102}
-  - 114: {fileID: 11488914}
-  - 114: {fileID: 11485502}
-  - 114: {fileID: 11490088}
-  - 114: {fileID: 11435264}
+  - 114: {fileID: 11400304}
   m_Layer: 0
   m_Name: playerPaddle
   m_TagString: Paddle
@@ -48,8 +43,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
+  m_LocalPosition: {x: 0, y: 0, z: -30}
   m_LocalScale: {x: 4, y: 2, z: 2}
   m_Children:
   - {fileID: 487564}
@@ -83,7 +78,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: 404962}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
   m_ImportantGI: 0
@@ -127,7 +122,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &6587190
 BoxCollider:
@@ -137,10 +132,10 @@ BoxCollider:
   m_GameObject: {fileID: 186960}
   m_Material: {fileID: 13400000, guid: 4c08e017be42148a588b7e1298380976, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .200000152, y: 1.98074996, z: 1.20000005}
-  m_Center: {x: -1.6093793e-12, y: 2.70009041e-05, z: 8.04689865e-13}
+  m_Size: {x: .178440362, y: 1.98074996, z: 1.20000005}
+  m_Center: {x: .0107798576, y: 2.69996181e-05, z: 1.28668587e-09}
 --- !u!108 &10884884
 Light:
   m_ObjectHideFlags: 1
@@ -173,107 +168,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11407102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186960}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a48f483741cfa45a3c909819aff56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slidingPaddle: {fileID: 0}
---- !u!114 &11435264
+--- !u!114 &11400304
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186960}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 622f73a6c334f4ff48ed90a688d76c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 404962}
-  lerpRate: 15
---- !u!114 &11480150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186960}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e06d27c8454045598a46975f917722f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpped: 1
-  slidingPaddle: {fileID: 0}
---- !u!114 &11485502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: .100000001
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: .00100000005
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &11488914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 247
-    i1: 51
-    i2: 231
-    i3: 216
-    i4: 163
-    i5: 60
-    i6: 244
-    i7: 4
-    i8: 56
-    i9: 155
-    i10: 59
-    i11: 85
-    i12: 72
-    i13: 211
-    i14: 232
-    i15: 170
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
---- !u!114 &11490088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e5281cf11db242d7a7b7a2d8fdd8d2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  paddleSpeed: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

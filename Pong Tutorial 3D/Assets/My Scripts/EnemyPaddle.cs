@@ -17,21 +17,20 @@ public class EnemyPaddle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float yPos = transform.position.y;
-		float ballYPos = ball.transform.position.y;
-		float ballXPos = ball.transform.position.x;
+		float xPos = transform.position.x;
+		float ballXPos = ball.transform.position.x;	
 		if (ballIsTooClose () && ball.isMovingTowardEnemy ()) {
-			if (yPos < ballYPos)
-				yPos += paddleSpeed * 0.1f;
-			if (yPos > ballYPos)
-				yPos -= paddleSpeed * 0.1f;
+			if (xPos < ballXPos)
+				xPos += paddleSpeed * 0.1f;
+			if (xPos > ballXPos)
+				xPos -= paddleSpeed * 0.1f;
 		} else {
-			if (yPos < 0)
-				yPos += paddleSpeed * 0.1f;
-			if (yPos > 0)
-				yPos -= paddleSpeed * 0.1f;
+			if (xPos < 0)
+				xPos += paddleSpeed * 0.1f;
+			if (xPos > 0)
+				xPos -= paddleSpeed * 0.1f;
 		}
-		transform.position = new Vector3(-20, Mathf.Clamp(yPos, -12.5f, 12.5f), 0);
+		transform.position = new Vector3(Mathf.Clamp (xPos, -12.5f, 12.5f), transform.position.y, transform.position.z);
 	}
 
 	bool ballIsTooClose(){

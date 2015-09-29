@@ -7,8 +7,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (isLocalPlayer) {
-//			GameObject.Find("Main Camera").SetActive(false);
-			GetComponent<PlayerPaddle>().enabled = true;
+			GetComponent<PaddleControls>().enabled = true;
 			GetComponent<BoxCollider>().enabled = true;
 		}
 	}
