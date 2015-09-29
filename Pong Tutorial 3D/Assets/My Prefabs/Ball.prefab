@@ -129,7 +129,7 @@ MonoBehaviour:
   startDelay: 2
   gc: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
-  zBound: 40
+  zBound: 45
   xBound: 10
   eulerAngleVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11445382
