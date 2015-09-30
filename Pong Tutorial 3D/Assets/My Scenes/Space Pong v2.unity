@@ -85,6 +85,10 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &187404216 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 186960, guid: f733e7d8a33cf404389b3b5548d3e8aa, type: 2}
+  m_PrefabInternal: {fileID: 1045067631}
 --- !u!1 &298251369
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,6 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   enemyScore: 0
+  player: {fileID: 187404216}
 --- !u!4 &597764725
 Transform:
   m_ObjectHideFlags: 0

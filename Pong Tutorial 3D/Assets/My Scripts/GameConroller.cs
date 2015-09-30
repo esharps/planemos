@@ -1,20 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class GameConroller : MonoBehaviour {
 
 	public int playerScore;
 	public int enemyScore;
+	public GameObject player;
 //	public GUIText playerScoreText;
 //	public GUIText enemyScoreText;
 
 
+	void Awake(){
+		player.GetComponent<PlayerNetworkSetup> ().enabled = false;
+		player.GetComponent<PlayerSyncPosition> ().enabled = false;
+		player.GetComponent<PaddleControls> ().enabled = true;
+		player.GetComponent<BoxCollider> ().enabled = true;
+		player.GetComponent<NetworkTransform> ().enabled = false;
+		player.GetComponent<NetworkIdentity> ().enabled = false;
 
+	}
 	// Use this for initialization
 	void Start () {
+		player.SetActive (true);
 		playerScore = 0;
 		enemyScore = 0;
 		UpdateScore ();
+
+
 	}
 
 	// Update is called once per frame

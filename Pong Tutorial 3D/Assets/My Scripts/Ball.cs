@@ -21,14 +21,14 @@ public class Ball : MonoBehaviour {
 		thisRigidBody = GetComponent<Rigidbody> ();
 	}
 
-	void Start(){
-		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
-		if (gameControllerObj != null) {
-			gc = gameControllerObj.GetComponent<GameConroller> ();
-		} else {
-			Debug.Log ("Cannot find 'GameController' script.");
-		}
-	}
+//	void Start(){
+//		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
+//		if (gameControllerObj != null) {
+//			gc = gameControllerObj.GetComponent<GameConroller> ();
+//		} else {
+//			Debug.Log ("Cannot find 'GameController' script.");
+//		}
+//	}
 
 	void FixedUpdate(){
 		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);

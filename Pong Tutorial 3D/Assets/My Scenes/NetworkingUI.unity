@@ -92,14 +92,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_Channels.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 438756, guid: 36475fb0eb93f44398f315082198932c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -130,30 +122,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438756, guid: 36475fb0eb93f44398f315082198932c, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_OnlineScene
-      value: Space Pong 2 Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_SpawnPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 186960, guid: f733e7d8a33cf404389b3b5548d3e8aa, type: 2}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_PlayerSpawnMethod
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_Channels.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_CustomConfig
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
-      propertyPath: m_UseSimulator
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
