@@ -124,6 +124,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_ServerBindToIP
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_ScriptCRCCheck
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_NetworkPort
+      value: 7777
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_RunInBackground
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36475fb0eb93f44398f315082198932c, type: 2}
   m_IsPrefabParent: 0

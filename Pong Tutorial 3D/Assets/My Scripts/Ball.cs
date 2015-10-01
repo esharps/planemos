@@ -5,7 +5,7 @@ public class Ball : MonoBehaviour {
 
 	public float ballInitVel = 600f;
 	public float startDelay = 2f;
-	public GameConroller gc;
+//	public GameConroller gc;
 	public Vector3 startPos;
 	public float zBound;
 	public float xBound;

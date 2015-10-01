@@ -8,7 +8,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 	void Start () {
 		if (isLocalPlayer) {
 			GetComponent<PaddleControls>().enabled = true;
-			GetComponent<BoxCollider>().enabled = true;
+//			GetComponent<MeshCollider>().enabled = true;
 		}
 	}
 }

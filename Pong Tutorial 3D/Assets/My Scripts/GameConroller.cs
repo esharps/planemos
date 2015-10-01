@@ -7,21 +7,24 @@ public class GameConroller : MonoBehaviour {
 	public int playerScore;
 	public int enemyScore;
 	public GameObject player;
+	public GameObject ball;
 //	public GUIText playerScoreText;
 //	public GUIText enemyScoreText;
 
 
 	void Awake(){
-		player.GetComponent<PlayerNetworkSetup> ().enabled = false;
-		player.GetComponent<PlayerSyncPosition> ().enabled = false;
-		player.GetComponent<PaddleControls> ().enabled = true;
-		player.GetComponent<BoxCollider> ().enabled = true;
-		player.GetComponent<NetworkTransform> ().enabled = false;
-		player.GetComponent<NetworkIdentity> ().enabled = false;
+//		player.GetComponent<PlayerNetworkSetup> ().enabled = false;
+//		player.GetComponent<PlayerSyncPosition> ().enabled = false;
+//		player.GetComponent<PaddleControls> ().enabled = true;
+//		player.GetComponent<MeshCollider> ().enabled = true;
+//		player.GetComponent<NetworkTransform> ().enabled = false;
+//		player.GetComponent<NetworkIdentity> ().enabled = false;
 
 	}
 	// Use this for initialization
 	void Start () {
+		ball.GetComponent<Ball> ().enabled = true;
+		ball.SetActive (true);
 		player.SetActive (true);
 		playerScore = 0;
 		enemyScore = 0;
