@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PaddleControls : MonoBehaviour {
+public class NetworkPaddleControls : NetworkBehaviour {
 
 	public float paddleSpeed = 1.0f;
 	private Vector3 playerPos;
@@ -9,7 +10,7 @@ public class PaddleControls : MonoBehaviour {
 	private Vector3 targetPos;
 	private Vector3 lastMousePos;
 	
-#if UNITY_EDITOR
+	#if UNITY_EDITOR
 	// Update is called once per frame
 	void Update () {
 		float xPos = transform.position.x + Input.GetAxis("Horizontal") * paddleSpeed;
@@ -18,10 +19,12 @@ public class PaddleControls : MonoBehaviour {
 		transform.position = playerPos;
 	}
 	
-#endif
+	#endif
 	void OnMouseDrag(){
-		float distance_to_screen = Camera.main.WorldToScreenPoint (transform.position).z;
-		Vector3 pos_move = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
-		transform.position = new Vector3 (pos_move.x, pos_move.y, transform.position.z);
+		if (isLocalPlayer) {
+			float distance_to_screen = Camera.main.WorldToScreenPoint (transform.position).z;
+			Vector3 pos_move = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
+			transform.position = new Vector3 (pos_move.x, pos_move.y, transform.position.z);
+		}
 	}
 }
