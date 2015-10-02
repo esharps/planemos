@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 public class NetworkPaddleControls : NetworkBehaviour {
 
 	public float paddleSpeed = 1.0f;
+	public float xBound = 12.5f;
+	public float yBound = 9.0f;
 	private Vector3 playerPos;
 	
 	private Vector3 targetPos;
@@ -15,7 +17,7 @@ public class NetworkPaddleControls : NetworkBehaviour {
 	void Update () {
 		float xPos = transform.position.x + Input.GetAxis("Horizontal") * paddleSpeed;
 		float yPos = transform.position.y + Input.GetAxis ("Vertical") * paddleSpeed;
-		playerPos = new Vector3 (Mathf.Clamp (xPos, -12.5f, 12.5f), Mathf.Clamp(yPos, -10, 10), transform.position.z);
+		playerPos = new Vector3 (Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z);
 		transform.position = playerPos;
 	}
 	
@@ -23,8 +25,14 @@ public class NetworkPaddleControls : NetworkBehaviour {
 	void OnMouseDrag(){
 		if (isLocalPlayer) {
 			float distance_to_screen = Camera.main.WorldToScreenPoint (transform.position).z;
-			Vector3 pos_move = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
-			transform.position = new Vector3 (pos_move.x, pos_move.y, transform.position.z);
+			Vector3 pos_move = Camera.main.ScreenToWorldPoint (
+				new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance_to_screen)
+				);
+			transform.position = new Vector3 (
+				Mathf.Clamp (pos_move.x, -xBound, xBound), 
+				Mathf.Clamp(pos_move.y , -yBound, yBound), 
+				transform.position.z
+				);
 		}
 	}
 }

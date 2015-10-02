@@ -13,10 +13,11 @@ GameObject:
   - 54: {fileID: 5468102}
   - 108: {fileID: 10898418}
   - 135: {fileID: 13590086}
-  - 114: {fileID: 11445364}
   - 114: {fileID: 11459182}
   - 114: {fileID: 11445382}
   - 114: {fileID: 11488444}
+  - 114: {fileID: 11457258}
+  - 114: {fileID: 11413432}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -81,7 +82,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!108 &10898418
 Light:
@@ -93,14 +94,14 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: .305882394, g: 1, b: .132352948, a: 1}
-  m_Intensity: .5
-  m_Range: 30
+  m_Intensity: 1.60000002
+  m_Range: 50
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
-    m_Strength: .129999995
+    m_Strength: .0500000007
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -115,7 +116,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11445364
+--- !u!114 &11413432
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,14 +124,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 110470}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade2e6ac18b87475ab2171e6b70d30cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cfd6e2f3783d432b8d1dc5b6026c69f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballInitVel: 1000
+  move3d: 0
+  ballInitVel: 600
   startDelay: 2
+  zBound: 0
+  xBound: 0
   startPos: {x: 0, y: 0, z: 0}
-  zBound: 45
-  xBound: 10
   eulerAngleVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11445382
 MonoBehaviour:
@@ -152,6 +154,24 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &11457258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110470}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfd6e2f3783d432b8d1dc5b6026c69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move3d: 0
+  ballInitVel: 600
+  startDelay: 2
+  zBound: 32
+  xBound: 50
+  startPos: {x: 0, y: 0, z: 0}
+  eulerAngleVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11459182
 MonoBehaviour:
   m_ObjectHideFlags: 1

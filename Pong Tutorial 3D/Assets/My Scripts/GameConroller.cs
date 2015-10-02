@@ -4,8 +4,8 @@ using UnityEngine.Networking;
 
 public class GameConroller : MonoBehaviour {
 
-	public int playerScore;
-	public int enemyScore;
+//	public int playerScore;
+//	public int enemyScore;
 	public GameObject player;
 	public GameObject ball;
 //	public GUIText playerScoreText;
@@ -19,18 +19,16 @@ public class GameConroller : MonoBehaviour {
 //		player.GetComponent<MeshCollider> ().enabled = true;
 //		player.GetComponent<NetworkTransform> ().enabled = false;
 //		player.GetComponent<NetworkIdentity> ().enabled = false;
-
 	}
 	// Use this for initialization
 	void Start () {
-		ball.GetComponent<Ball> ().enabled = true;
 		ball.SetActive (true);
+		ball.GetComponent<BallController> ().enabled = true;
 		player.SetActive (true);
-		playerScore = 0;
-		enemyScore = 0;
-		UpdateScore ();
-
-
+		
+//		playerScore = 0;
+//		enemyScore = 0;
+//		UpdateScore ();
 	}
 
 	// Update is called once per frame
@@ -40,13 +38,13 @@ public class GameConroller : MonoBehaviour {
 	}
 
 
-	public void incPlayerScore(){
-		playerScore++;
-		UpdateScore ();
-	}
-
-	public void incEnemyScore(){
-		enemyScore++;
-		UpdateScore ();
-	}
+//	public void incPlayerScore(){
+//		playerScore++;
+//		UpdateScore ();
+//	}
+//
+//	public void incEnemyScore(){
+//		enemyScore++;
+//		UpdateScore ();
+//	}
 }

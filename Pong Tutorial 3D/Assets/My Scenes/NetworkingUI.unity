@@ -140,6 +140,14 @@ Prefab:
       propertyPath: m_RunInBackground
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 159996, guid: c95dceae2f77c448296aa18d793489d0, type: 2}
+    - target: {fileID: 11467032, guid: 36475fb0eb93f44398f315082198932c, type: 2}
+      propertyPath: m_SpawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 159996, guid: c95dceae2f77c448296aa18d793489d0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36475fb0eb93f44398f315082198932c, type: 2}
   m_IsPrefabParent: 0

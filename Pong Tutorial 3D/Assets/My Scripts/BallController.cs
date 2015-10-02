@@ -1,47 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
+public class BallController : MonoBehaviour {
 
+	public bool move3d;
 	public float ballInitVel = 600f;
 	public float startDelay = 2f;
-//	public GameConroller gc;
-	public Vector3 startPos;
 	public float zBound;
 	public float xBound;
+	//	public GameConroller gc;
+	public Vector3 startPos;
 	public Vector3 eulerAngleVelocity;
-
+	
 	private Rigidbody thisRigidBody;
 	private bool ballInPlay = false;
 	private int volleyCount = 0;
-
-
+	
+	
 	// Use this for initialization
 	void Awake () {
 		thisRigidBody = GetComponent<Rigidbody> ();
+		if (!move3d) {
+			thisRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
+		}
 	}
-
-//	void Start(){
-//		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
-//		if (gameControllerObj != null) {
-//			gc = gameControllerObj.GetComponent<GameConroller> ();
-//		} else {
-//			Debug.Log ("Cannot find 'GameController' script.");
-//		}
-//	}
-
+	
+	//	void Start(){
+	//		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
+	//		if (gameControllerObj != null) {
+	//			gc = gameControllerObj.GetComponent<GameConroller> ();
+	//		} else {
+	//			Debug.Log ("Cannot find 'GameController' script.");
+	//		}
+	//	}
+	
 	void FixedUpdate(){
 		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
 		thisRigidBody.MoveRotation(thisRigidBody.rotation * deltaRotation);
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		if (!ballInPlay) {
 			ballInPlay = true;
 			StartCoroutine(startBall());
 		}
-
+		
 		else {
 			if( volleyCount > 3 ){
 				volleyCount = 0;
@@ -51,19 +55,19 @@ public class Ball : MonoBehaviour {
 			}
 			if(transform.position.z < -zBound)
 			{
-//				gc.incPlayerScore();
+				//				gc.incPlayerScore();
 				resetBall();
 				ballInPlay = false;
 			}
 			if(transform.position.z > zBound)
 			{
-//				gc.incEnemyScore();
+				//				gc.incEnemyScore();
 				resetBall();
 				ballInPlay = false;
 			}
 		}
 	}
-
+	
 	IEnumerator startBall(){
 		yield return new WaitForSeconds(startDelay);
 		eulerAngleVelocity = new Vector3(
@@ -71,24 +75,37 @@ public class Ball : MonoBehaviour {
 			Random.Range (-200, 200), 
 			Random.Range (-200, 200)
 			);
-		float x = Random.Range (-0.5f, 0.5f);
-		float z = Mathf.Sign(Random.Range (-1.0f, 1.0f));
-		Vector3 direction = new Vector3(x, 0, z).normalized;
+
+		Vector3 direction = getDir ();
 		direction = direction.normalized * ballInitVel;
-		thisRigidBody.AddForce(direction);
+		thisRigidBody.AddForce(getDir ());
 	}
 
+	Vector3 getDir(){
+		Vector3 dir = Vector3.zero;
+		float x = Random.Range (-0.5f, 0.5f);
+		float z = Mathf.Sign(Random.Range (-1.0f, 1.0f));
+		if (move3d) {
+			float y = Random.Range (-0.5f, 0.5f);
+			dir = new Vector3(x,y,z);
+		} else {
+			dir = new Vector3(x, 0, z);
+		}
+		dir = dir.normalized * ballInitVel;
+		return dir;
+	}
+	
 	void resetBall(){
 		eulerAngleVelocity = Vector3.zero;
 		thisRigidBody.velocity = Vector3.zero;
 		transform.position = startPos;
 		volleyCount = 0;
 	}
-
+	
 	public bool isMovingTowardEnemy(){
 		return thisRigidBody.velocity.z > 0;
 	}
-
+	
 	void OnCollisionEnter( Collision coll ){
 		if(coll.gameObject.CompareTag ("Paddle"))
 			volleyCount++;

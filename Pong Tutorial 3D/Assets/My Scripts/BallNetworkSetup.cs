@@ -9,7 +9,7 @@ public class BallNetworkSetup : NetworkBehaviour {
 		GetComponent<SphereCollider>().enabled = true;		
 
 		if (isServer) {
-			GetComponent<Ball>().enabled = true;
+			GetComponent<BallController>().enabled = true;
 		}
 	}
 }
