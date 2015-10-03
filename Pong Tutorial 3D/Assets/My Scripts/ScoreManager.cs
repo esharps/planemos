@@ -4,20 +4,26 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+	//For single player against AI
 	public static int playerScore;
 	public static int enemyScore;
+	public Text playerScoreText;
+	public Text enemyScoreText;
 
-	Text playerScoreText;
-	Text enemyScoreText;
-	
+	//For multiplayer games
+	public static int p1Score;
+	public static int p2Score;
+	public static int p3Score;
+	public static int p4Score;
+
 	void Awake () {
 
 		playerScore = 0;
-		playerScoreText = GetComponent<Text> ();
+		//playerScoreText = GetComponent<Text> ();
 		playerScoreText.text = "" + playerScore;
 
 		enemyScore = 0;
-		enemyScoreText = GetComponent<Text> ();
+		//enemyScoreText = GetComponent<Text> ();
 		enemyScoreText.text = "" + enemyScore;
 	}
 	
@@ -27,16 +33,5 @@ public class ScoreManager : MonoBehaviour {
 		enemyScoreText.text = "" + enemyScore;
 	}
 
-	// If the enemy scores on the player, increment enemy score
-	void OnEnemyScore() {
-		enemyScore++;
-		enemyScoreText.text = "" + enemyScore;
-	}
-
-	// If the player scores on the enemy, increment player score
-	void OnPlayerScore() {
-		playerScore++;
-		playerScoreText.text = "" + playerScore;
-	}
 
 }
