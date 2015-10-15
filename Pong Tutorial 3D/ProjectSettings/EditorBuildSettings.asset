@@ -4,4 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/My Scenes/NetworkingUI.unity
+  - enabled: 0
+    path: Assets/My Scenes/Space Pong 2 Player.unity
+  - enabled: 0
+    path: Assets/My Scenes/Full 3D Joystick.unity
+  - enabled: 1
+    path: Assets/My Scenes/Full 3D.unity
