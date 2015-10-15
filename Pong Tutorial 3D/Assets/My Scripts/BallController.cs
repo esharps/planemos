@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BallController : MonoBehaviour {
 
@@ -8,6 +9,14 @@ public class BallController : MonoBehaviour {
 	public float startDelay = 2f;
 	public float zBound;
 	public float xBound;
+
+	/*
+	public int playerScore;
+	public int enemyScore;
+
+	public Text playerScoreText;
+	public Text enemyScoreText;*/
+
 	//	public GameConroller gc;
 	public Vector3 startPos;
 	public Vector3 eulerAngleVelocity;
@@ -24,7 +33,15 @@ public class BallController : MonoBehaviour {
 			thisRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
 		}
 	}
-	
+
+	void Start() {
+		//playerScoreText = GetComponent<Text> ();
+		//playerScore = 0;
+
+		//enemyScoreText = GetComponent<Text> ();
+		//enemyScore = 0;
+
+	}
 	//	void Start(){
 	//		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
 	//		if (gameControllerObj != null) {
@@ -55,13 +72,13 @@ public class BallController : MonoBehaviour {
 			}
 			if(transform.position.z < -zBound)
 			{
-				//				gc.incPlayerScore();
+				ScoreManager.enemyScore++; //EMILY
 				resetBall();
 				ballInPlay = false;
 			}
 			if(transform.position.z > zBound)
 			{
-				//				gc.incEnemyScore();
+				ScoreManager.playerScore++;//EMILY
 				resetBall();
 				ballInPlay = false;
 			}
