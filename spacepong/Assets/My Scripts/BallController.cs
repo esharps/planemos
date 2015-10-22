@@ -10,6 +10,8 @@ public class BallController : MonoBehaviour {
 	public float zBound;
 	public float xBound;
 
+	public Text ballPosText;//EMILY
+
 	/*
 	public int playerScore;
 	public int enemyScore;
@@ -83,6 +85,8 @@ public class BallController : MonoBehaviour {
 				ballInPlay = false;
 			}
 		}
+
+		ballPosText.text = "Ball z = " + transform.position.z;
 	}
 	
 	IEnumerator startBall(){
