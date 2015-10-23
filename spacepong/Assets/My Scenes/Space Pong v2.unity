@@ -419,12 +419,12 @@ Light:
 GameObject:
   m_PrefabParentObject: {fileID: 110470, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1, type: 2}
   m_PrefabInternal: {fileID: 2029733373}
---- !u!114 &587639006 stripped
+--- !u!114 &587639004 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11445364, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1,
+  m_PrefabParentObject: {fileID: 11457258, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1,
     type: 2}
   m_PrefabInternal: {fileID: 2029733373}
-  m_Script: {fileID: 11500000, guid: ade2e6ac18b87475ab2171e6b70d30cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cfd6e2f3783d432b8d1dc5b6026c69f, type: 3}
 --- !u!1 &597764723
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,8 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f5a866602a34cf78a8da7781c6f651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 0
-  enemyScore: 0
   player: {fileID: 64252872}
   ball: {fileID: 587639002}
 --- !u!4 &597764725
@@ -570,7 +568,11 @@ Prefab:
     - target: {fileID: 11471230, guid: 573f03d4f64c24e21a6740ff3b5e9ae1, type: 2}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 587639006}
+      objectReference: {fileID: 587639002}
+    - target: {fileID: 11471230, guid: 573f03d4f64c24e21a6740ff3b5e9ae1, type: 2}
+      propertyPath: ballController
+      value: 
+      objectReference: {fileID: 587639004}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 573f03d4f64c24e21a6740ff3b5e9ae1, type: 2}
   m_IsPrefabParent: 0

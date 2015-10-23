@@ -43,7 +43,7 @@ public class PortalBehavior : MonoBehaviour {
 		}
 	}
 
-	public void update(){
+	public void Update(){
 		timer += Time.deltaTime;
 		if (timer > 1) {
 			timer = 0;
@@ -52,11 +52,5 @@ public class PortalBehavior : MonoBehaviour {
 		}
 		orange.GetComponent<BoxCollider>().enabled = portalsActive;
 		purple.GetComponent<BoxCollider>().enabled = portalsActive;
-	}
-
-	public void activatePortals(){
-		foreach(Transform child in transform){
-			child.GetComponent<BoxCollider>().enabled = true;
-		}
 	}
 }
