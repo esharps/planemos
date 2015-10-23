@@ -6,8 +6,8 @@ public class PortalBehavior : MonoBehaviour {
 	private GameObject orange;
 	private GameObject purple;
 	//public bool transporting;
-	private bool portalsActive = true;
-	private long timer = 0;
+	public bool portalsActive = true;
+	public float timer = 0f;
 
 	void Start(){
 		orange = transform.FindChild ("Orange").gameObject;
@@ -16,32 +16,30 @@ public class PortalBehavior : MonoBehaviour {
 
 
 	public void OnOrangeCollision(Collider c){
-		orange.GetComponent<BoxCollider> ().enabled = false;
+		orange.GetComponent<BoxCollider> ().enabled = false;		
+		purple.GetComponent<BoxCollider>().enabled = false;
+		portalsActive = false;
+		timer = 0;
 		moveToPurple (c.gameObject);
 	}
 
 	public void OnPurpleCollision(Collider c){
 		orange.GetComponent<BoxCollider> ().enabled = false;
 		purple.GetComponent<BoxCollider>().enabled = false;
+		timer = 0;
+		portalsActive = false;
 		moveToOrange (c.gameObject);
 	}
-
-//	public void onTriggerEnter(Collider c){
-//		moveToPurple(c)
-//		portalsActive = false;
-//	}
 
 	void moveToPurple(GameObject go){
 		if(go.CompareTag("Ball")){
 			go.transform.position = purple.transform.position;
-//			purple.GetComponent<BoxCollider>().enabled = true;
 		}
 	}
 
 	void moveToOrange(GameObject go){
 		if(go.CompareTag("Ball")){
 			go.transform.position = orange.transform.position;
-//			orange.GetComponent<BoxCollider>().enabled = true;
 		}
 	}
 
@@ -49,14 +47,15 @@ public class PortalBehavior : MonoBehaviour {
 		timer += Time.deltaTime;
 		if (timer > 1) {
 			timer = 0;
-			if(!portalsActive){
-				activatePortals();
-			}
+			if(!portalsActive)
+				portalsActive = true;
 		}
+		orange.GetComponent<BoxCollider>().enabled = portalsActive;
+		purple.GetComponent<BoxCollider>().enabled = portalsActive;
 	}
 
 	public void activatePortals(){
-		for(Transform child in transform){
+		foreach(Transform child in transform){
 			child.GetComponent<BoxCollider>().enabled = true;
 		}
 	}

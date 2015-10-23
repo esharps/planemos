@@ -95,7 +95,7 @@ public class BallController : MonoBehaviour {
 
 		Vector3 direction = getDir ();
 		direction = direction.normalized * ballInitVel;
-		thisRigidBody.AddForce(getDir ());
+		thisRigidBody.AddForce(direction);
 	}
 
 	Vector3 getDir(){
@@ -119,8 +119,9 @@ public class BallController : MonoBehaviour {
 		volleyCount = 0;
 	}
 	
-	public bool isMovingTowardEnemy(){
-		return thisRigidBody.velocity.z > 0;
+	public bool isMovingToward(Vector3 pos){
+		Vector3 ballToPos = pos - transform.position;
+		return Vector3.Dot(thisRigidBody.velocity, ballToPos) > 0; 
 	}
 	
 	void OnCollisionEnter( Collision coll ){

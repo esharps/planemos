@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemyPaddle : MonoBehaviour {
 	public GameObject ball;
 	public BallController ballController;
-	public float tooClose = 50;
-	public float paddleSpeed = 1;
-	public float xBound;
-	public float yBound;
+	public float tooClose = 50f;
+	public float paddleSpeed = 1f;
+	public float xBound = 12.5f;
+	public float yBound = 8f;
 
 
 //	// Use this for initialization
@@ -24,7 +24,7 @@ public class EnemyPaddle : MonoBehaviour {
 		float yPos = transform.position.y;
 		float ballXPos = ball.transform.position.x;	
 		float ballYPos = ball.transform.position.y;
-		if (ballIsTooClose () && ballController.isMovingTowardEnemy ()) {
+		if (closeEnough () && ballController.isMovingToward(transform.position)) {
 			if (xPos < ballXPos)
 				xPos += paddleSpeed;
 			if (xPos > ballXPos)
@@ -47,7 +47,7 @@ public class EnemyPaddle : MonoBehaviour {
 		transform.position = new Vector3(Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z);
 	}
 
-	bool ballIsTooClose(){
+	bool closeEnough(){
 		float distToBall = Vector3.Distance (transform.position, ball.transform.position);
 		return distToBall < tooClose;
 	}

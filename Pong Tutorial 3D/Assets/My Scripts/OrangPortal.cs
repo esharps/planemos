@@ -10,13 +10,10 @@ public class OrangPortal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider c){
-		if (!parentPortalBehavior.transporting) {
-			parentPortalBehavior.transporting = true;
-			parentPortalBehavior.OnOrangeCollision (c);
-		}
+		parentPortalBehavior.OnOrangeCollision (c);
 	}
 
-	void OnTriggerExit(){
-		parentPortalBehavior.transporting = false;
-	}
+//	void OnTriggerExit(){
+//		parentPortalBehavior.transporting = false;
+//	}
 }
