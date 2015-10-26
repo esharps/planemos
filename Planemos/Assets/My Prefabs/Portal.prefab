@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 450846}
   - 212: {fileID: 21251868}
   - 114: {fileID: 11411734}
-  - 65: {fileID: 6542978}
   - 114: {fileID: 11455492}
+  - 135: {fileID: 13547704}
   m_Layer: 0
   m_Name: Purple
   m_TagString: Untagged
@@ -47,6 +47,7 @@ GameObject:
   - 114: {fileID: 11499718}
   - 65: {fileID: 6522214}
   - 114: {fileID: 11476818}
+  - 54: {fileID: 5422086}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Untagged
@@ -75,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 7.25, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 414144}
@@ -87,11 +88,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182154}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -8.47999954, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 414144}
   m_RootOrder: 0
+--- !u!54 &5422086
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182154}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6522214
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -103,19 +119,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 8.88896179, y: 8.51559734, z: .199999973}
-  m_Center: {x: -.0166091919, y: -.270159423, z: -1.48497747e-09}
---- !u!65 &6542978
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.89638233, y: 8.04236889, z: .199999973}
-  m_Center: {x: .343559235, y: -.508246124, z: -3.78398045e-06}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11411734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0956417d7faf4b799b1b71c23f6a5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transporting: 0
+  portalsActive: 1
+  timer: 0
 --- !u!114 &11455492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +177,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3014c226a5ab54a04847075d0e021ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &13547704
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &21251868
 SpriteRenderer:
   m_ObjectHideFlags: 1

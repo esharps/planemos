@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Paddle
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -5,21 +5,13 @@ using UnityEngine.UI;
 public class BallController : MonoBehaviour {
 
 	public bool move3d;
-	public float ballInitVel = 600f;
+	public float ballInitVel = 100f;
 	public float startDelay = 2f;
 	public float zBound;
 	public float xBound;
 
 	public Text ballPosText;//EMILY
 
-	/*
-	public int playerScore;
-	public int enemyScore;
-
-	public Text playerScoreText;
-	public Text enemyScoreText;*/
-
-	//	public GameConroller gc;
 	public Vector3 startPos;
 	public Vector3 eulerAngleVelocity;
 	
@@ -27,32 +19,14 @@ public class BallController : MonoBehaviour {
 	private bool ballInPlay = false;
 	private int volleyCount = 0;
 	
-	
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		thisRigidBody = GetComponent<Rigidbody> ();
 		if (!move3d) {
 			thisRigidBody.constraints = RigidbodyConstraints.FreezePositionY;
 		}
 	}
 
-	void Start() {
-		//playerScoreText = GetComponent<Text> ();
-		//playerScore = 0;
-
-		//enemyScoreText = GetComponent<Text> ();
-		//enemyScore = 0;
-
-	}
-	//	void Start(){
-	//		GameObject gameControllerObj = GameObject.FindWithTag ("GameController");
-	//		if (gameControllerObj != null) {
-	//			gc = gameControllerObj.GetComponent<GameConroller> ();
-	//		} else {
-	//			Debug.Log ("Cannot find 'GameController' script.");
-	//		}
-	//	}
-	
 	void FixedUpdate(){
 		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
 		thisRigidBody.MoveRotation(thisRigidBody.rotation * deltaRotation);
@@ -66,10 +40,10 @@ public class BallController : MonoBehaviour {
 		}
 		
 		else {
-			if( volleyCount > 3 ){
+			if( volleyCount > 2 ){
 				volleyCount = 0;
 				Vector3 currentVel = thisRigidBody.velocity;
-				Vector3 newVel = new Vector3(currentVel.x + Mathf.Sign(currentVel.x) * 5.0f, 0, currentVel.z + Mathf.Sign(currentVel.z) * 5.0f);
+				Vector3 newVel = currentVel * 1.5f;
 				thisRigidBody.velocity = newVel;
 			}
 			if(transform.position.z < -zBound)
@@ -129,7 +103,7 @@ public class BallController : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter( Collision coll ){
-		if(coll.gameObject.CompareTag ("Paddle"))
+		if(coll.gameObject.CompareTag ("Enemy") || coll.gameObject.CompareTag("Player"))
 			volleyCount++;
 	}
 }

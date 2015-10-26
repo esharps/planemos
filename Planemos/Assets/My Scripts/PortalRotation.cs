@@ -5,5 +5,8 @@ public class PortalRotation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.Rotate (0, 0, -1, Space.Self);
+		foreach (Transform child in transform) {
+			child.Rotate (0, 0, 1, Space.Self);
+		}
 	}
 }

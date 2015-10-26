@@ -17,7 +17,7 @@ public class PortalBehavior : MonoBehaviour {
 
 	public void OnOrangeCollision(Collider c){
 		orange.GetComponent<BoxCollider> ().enabled = false;		
-		purple.GetComponent<BoxCollider>().enabled = false;
+		purple.GetComponent<SphereCollider>().enabled = false;
 		portalsActive = false;
 		timer = 0;
 		moveToPurple (c.gameObject);
@@ -25,7 +25,7 @@ public class PortalBehavior : MonoBehaviour {
 
 	public void OnPurpleCollision(Collider c){
 		orange.GetComponent<BoxCollider> ().enabled = false;
-		purple.GetComponent<BoxCollider>().enabled = false;
+		purple.GetComponent<SphereCollider>().enabled = false;
 		timer = 0;
 		portalsActive = false;
 		moveToOrange (c.gameObject);
@@ -51,6 +51,6 @@ public class PortalBehavior : MonoBehaviour {
 				portalsActive = true;
 		}
 		orange.GetComponent<BoxCollider>().enabled = portalsActive;
-		purple.GetComponent<BoxCollider>().enabled = portalsActive;
+		purple.GetComponent<SphereCollider>().enabled = portalsActive;
 	}
 }
