@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a630864ce4d89d488b73245f4ef71d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numPlayers: 4
+  numPlayers: 10
   mapRadius: 60
   sepPrefab: {fileID: 181886, guid: 75155513ddd3c0d46ba8ff75d77d0b00, type: 2}
   enemyPrefab: {fileID: 141550, guid: 74294d2314709db42a02bd1f38e9fe60, type: 2}

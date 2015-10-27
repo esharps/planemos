@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move3d: 1
-  ballInitVel: 1000
+  ballInitVel: 100
   startDelay: 2
   zBound: 45
   xBound: 100
