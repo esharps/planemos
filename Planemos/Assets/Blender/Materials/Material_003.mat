@@ -6,12 +6,13 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Inner_Sphere
+  m_Name: Material_003
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_ShaderKeywords: _ALPHATEST_ON
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -78,6 +79,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -90,7 +105,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: .379999995
       data:
         first:
           name: _Parallax
@@ -102,7 +117,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .409999996
       data:
         first:
           name: _BumpScale
@@ -122,17 +137,45 @@ Material:
       data:
         first:
           name: _Mode
-        second: 0
+        second: 1
       data:
         first:
           name: _Metallic
+        second: .639999986
+      data:
+        first:
+          name: _RimPower01
         second: 0
+      data:
+        first:
+          name: _RimWidth
+        second: .699999988
+      data:
+        first:
+          name: _Magnitude
+        second: 1500
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: .632569253, g: .661764741, b: .632569253, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .720588207, g: .688797534, b: .688797534, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .108023368, g: .109154679, b: .272058845, a: 1}
+      data:
+        first:
+          name: _HitPoint
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _ReflectColor
+        second: {r: 1, g: 1, b: 1, a: .5}
