@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - Paddle
   - Enemy
+  - Portal
   layers:
   - Default
   - TransparentFX

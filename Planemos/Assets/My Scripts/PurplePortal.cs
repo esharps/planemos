@@ -10,14 +10,10 @@ public class PurplePortal : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider c){
-//		if (!parentPortalBehavior.transporting) {
-//			parentPortalBehavior.transporting = true;
 		parentPortalBehavior.OnPurpleCollision (c);
-//		}
 	}
 
-//	void OnTriggerExit(){
-//		parentPortalBehavior.transporting = false;
-//	}
-
+	public Vector3 GetTranportPoint(){
+		return transform.TransformPoint (Vector3.forward * 3);
+	}
 }

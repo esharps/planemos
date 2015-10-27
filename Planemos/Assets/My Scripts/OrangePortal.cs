@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OrangPortal : MonoBehaviour {
+public class OrangePortal : MonoBehaviour {
 	
 	private PortalBehavior parentPortalBehavior;
 
@@ -13,7 +13,7 @@ public class OrangPortal : MonoBehaviour {
 		parentPortalBehavior.OnOrangeCollision (c);
 	}
 
-//	void OnTriggerExit(){
-//		parentPortalBehavior.transporting = false;
-//	}
+	public Vector3 GetTranportPoint(){
+		return transform.TransformPoint (Vector3.forward * 3);
+	}
 }
