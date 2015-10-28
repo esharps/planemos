@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: 26d368ff25befe04d83c7a255a7ca77c
-timeCreated: 1445901205
+guid: 0f47f9bb9b9105a449cd69a1bb80a172
+timeCreated: 1445985151
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Outer_Box
+    100004: Outer_Box_001
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Projector
+    400002: Outer_Box
+    400004: Outer_Box_001
+    2300000: Outer_Box
+    2300002: Outer_Box_001
+    3300000: Outer_Box
+    3300002: Outer_Box_001
+    4300000: Outer_Box_001
+    4300002: Outer_Box
     7400000: Default Take
     9500000: //RootNode
   materials:
