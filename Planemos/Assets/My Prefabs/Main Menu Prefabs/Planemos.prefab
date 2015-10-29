@@ -243,8 +243,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 434904}
   - 95: {fileID: 9571928}
-  - 136: {fileID: 13605712}
   - 114: {fileID: 11471944}
+  - 65: {fileID: 6563126}
   m_Layer: 0
   m_Name: Planemos
   m_TagString: Untagged
@@ -1022,6 +1022,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111404}
   m_Mesh: {fileID: 4300022, guid: 74cdb9851d81f2749abffb339ce9add8, type: 3}
+--- !u!65 &6563126
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.9320297, y: 2.70040417, z: 15.9713821}
+  m_Center: {x: -.0142529812, y: 1.25916481, z: .784255981}
 --- !u!95 &9571928
 Animator:
   serializedVersion: 3
@@ -1242,19 +1254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
---- !u!136 &13605712
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176952}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 8.13624668
-  m_Height: .25
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
