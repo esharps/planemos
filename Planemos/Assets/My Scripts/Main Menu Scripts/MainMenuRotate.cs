@@ -16,6 +16,9 @@ public class MainMenuRotate : MonoBehaviour {
     public GameObject menuRotator;
     public ParticleSystem selector;
 
+    private bool rotateToRight = false;
+    private bool rotateToLeft = false;
+
     //public Material transparent;
     //public Material live;
     //public Renderer rend;
@@ -64,9 +67,64 @@ public class MainMenuRotate : MonoBehaviour {
                 // Lock rotation in place if it's near one of the options when it gets to a certain speed
                 if (speed.magnitude < 0.2)
                 {
-                    // Lock onto Play
-                    if (menuRotator.transform.rotation.y < 45.0f && menuRotator.transform.rotation.y > 0.0f)
+                    float angle = menuRotator.transform.eulerAngles.y;
+
+                    // Move to Play
+                    // Left of Play
+                    if (angle < 360.0f && angle > 315.0f)
+                        rotateToRight = true;
+                    // Right of Play
+                    else if (angle <= 45.0f && angle > 0.0f)
+                        rotateToLeft = true;
+
+                    // Move to Options
+                    // Left of Options
+                    else if (angle < 90.0f && angle > 45.0f)
+                        rotateToRight = true;
+                    // Right of Options
+                    else if (angle <= 135.0f && angle > 90.0f)
+                        rotateToLeft = true;
+
+                    // Move to Quit
+                    // Left of Quit
+                    else if (angle < 180.0f && angle > 135.0f)
+                        rotateToRight = true;
+                    // Right of Quit
+                    else if (angle <= 225.0f && angle > 180.0f)
+                        rotateToLeft = true;
+
+                    // Move to Credits
+                    // Left of Credits
+                    else if (angle < 270.0f && angle > 225.0f)
+                        rotateToRight = true;
+                    // Right of Credits
+                    else if (angle <= 315.0 && angle > 270.0f)
+                        rotateToLeft = true;
+
+                    if (rotateToLeft)
+                    {
                         menuRotator.transform.Rotate(0.0f, -0.2f, 0.0f);
+                        rotateToLeft = false;
+                    }
+                    else if (rotateToRight)
+                    {
+                        menuRotator.transform.Rotate(0.0f, 0.2f, 0.0f);
+                        rotateToRight = false;
+                    }
+
+                    // Lock when it gets close
+                    // Play
+                    if (angle > 359.7f || angle < 0.3f)
+                        menuRotator.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    // Options
+                    else if (angle > 89.7f && angle < 90.3f)
+                        menuRotator.transform.eulerAngles = new Vector3(0.0f, 90.0f, 0.0f);
+                    // Quit
+                    else if (angle > 179.7f && angle < 180.3f)
+                        menuRotator.transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+                    // Credits
+                    else if (angle > 269.7f && angle < 270.3f)
+                        menuRotator.transform.eulerAngles = new Vector3(0.0f, 270.0f, 0.0f);
                 }
             }
 
