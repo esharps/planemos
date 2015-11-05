@@ -1770,7 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd94d19eb3b2a49a65bf14b8b05afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   delay: 2
   startDirection: {x: -1, y: 0, z: 0}
   rb: {fileID: 587639006}
