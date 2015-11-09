@@ -13,7 +13,7 @@ GameObject:
   - 54: {fileID: 5468102}
   - 108: {fileID: 10898418}
   - 135: {fileID: 13590086}
-  - 114: {fileID: 11498222}
+  - 114: {fileID: 11423162}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -90,14 +90,14 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: .305882394, g: 1, b: .132352948, a: 1}
-  m_Intensity: 1.60000002
+  m_Intensity: 1
   m_Range: 50
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
-    m_Strength: .0500000007
+    m_Resolution: 0
+    m_Strength: .0900000036
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -108,17 +108,17 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11498222
+--- !u!114 &11423162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110470}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cfd6e2f3783d432b8d1dc5b6026c69f, type: 3}
   m_Name: 

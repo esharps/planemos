@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Inner_Sphere
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Lit_Padding_Play
+  m_Shader: {fileID: 4800000, guid: 7682ab5e936afcb469d7fef4d5adf6eb, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -127,12 +127,32 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _TintStrength
+        second: 1
+      data:
+        first:
+          name: _CoreStrength
+        second: 1
+      data:
+        first:
+          name: _CutOutLightCore
+        second: .5
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 1, b: 0, a: 1}
+        second: {r: .0882353187, g: .396349013, b: 1, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .395436853, g: .410101771, b: .507352948, a: .5}
+      data:
+        first:
+          name: _CoreColor
+        second: {r: .22891435, g: .254801005, b: .426470578, a: .5}

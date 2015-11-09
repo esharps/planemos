@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Inner_Sphere
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
+  m_Name: Quit_Material
+  m_Shader: {fileID: 4800000, guid: 7682ab5e936afcb469d7fef4d5adf6eb, type: 3}
+  m_ShaderKeywords: _EMISSION _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -32,6 +32,13 @@ Material:
       data:
         first:
           name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Tex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -78,6 +85,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Sampler_A
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Sampler_B
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -91,6 +112,22 @@ Material:
         first:
           name: _Cutoff
         second: .5
+      data:
+        first:
+          name: _Exposure
+        second: 1
+      data:
+        first:
+          name: _SunSize
+        second: .0399999991
+      data:
+        first:
+          name: _AtmosphereThickness
+        second: 1
+      data:
+        first:
+          name: _SunDisk
+        second: 2
       data:
         first:
           name: _Parallax
@@ -127,12 +164,88 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _RimPower01
+        second: 0
+      data:
+        first:
+          name: _RimWidth
+        second: .699999988
+      data:
+        first:
+          name: _Magnitude
+        second: 1500
+      data:
+        first:
+          name: _TintStrength
+        second: 1
+      data:
+        first:
+          name: _CoreStrength
+        second: 1
+      data:
+        first:
+          name: _CutOutLightCore
+        second: .5
+      data:
+        first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _MaskPower
+        second: 1
+      data:
+        first:
+          name: _Offset
+        second: .0199999996
+      data:
+        first:
+          name: _Rotation
+        second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 1, b: 0, a: 1}
+        second: {r: .0882353187, g: .078503482, b: .078503482, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .279411793, g: .522921026, b: 1, a: 1}
+      data:
+        first:
+          name: _SkyTint
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _GroundColor
+        second: {r: .368999988, g: .349000007, b: .340999991, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .272058845, g: .518052816, b: 1, a: 1}
+      data:
+        first:
+          name: _HitPoint
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .404519916, g: .462656587, b: .632352948, a: .5}
+      data:
+        first:
+          name: _CoreColor
+        second: {r: .166522488, g: .183241889, b: .29411763, a: .5}
+      data:
+        first:
+          name: _FieldColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Pos_a
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _Tint
+        second: {r: .5, g: .5, b: .5, a: .5}
