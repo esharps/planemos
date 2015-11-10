@@ -11,32 +11,20 @@ public class MainMenuRotate : MonoBehaviour {
 
     private Vector3 speed;
     private Vector3 avgSpeed;
+
+    //private bool clicked = false;
     private bool dragging = false;
+    //private float[] mousePos = new float[2];
 
     public GameObject menuRotator;
-    public ParticleSystem selector;
+    //public Camera mainCam;
 
     private bool rotateToRight = false;
     private bool rotateToLeft = false;
 
-    //public Material transparent;
-    //public Material live;
-    //public Renderer rend;
-    //private float duration = 2.0f;
-
-    //// When player's not touching the title
-    //private float idleRotSpeed = 6.0f;
-    //private float idleTime = 0.0f;
-
-    //void Start()
-    //{
-    //    rend = GetComponent<Renderer>();
-    //    rend.material = transparent;
-    //}
-
     void OnMouseDown()
     {
-        dragging = true;
+        dragging = true;       
     }
 
     void Update () {
@@ -128,12 +116,7 @@ public class MainMenuRotate : MonoBehaviour {
                 }
             }
 
-            
-
-            //if (Time.time - idleTime > 5 || idleTime == 0.0f)
-            //    transform.Rotate(0.0f, -(idleRotSpeed * Time.deltaTime), 0.0f);
-            //else
-                transform.Rotate(0.0f, -(speed.x * rotSpeed), 0.0f);
+            transform.Rotate(0.0f, -(speed.x * rotSpeed), 0.0f);
         }
 
     }

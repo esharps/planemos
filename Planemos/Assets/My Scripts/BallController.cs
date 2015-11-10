@@ -10,7 +10,7 @@ public class BallController : MonoBehaviour {
 	public float zBound;
 	public float xBound;
 
-	public Text ballPosText;//EMILY
+//	public Text ballPosText;//EMILY
 
 	public Vector3 startPos;
 	public Vector3 eulerAngleVelocity;
@@ -60,7 +60,7 @@ public class BallController : MonoBehaviour {
 			}
 		}
 
-		ballPosText.text = "Ball z = " + transform.position.z;
+//		ballPosText.text = "Ball z = " + transform.position.z;
 	}
 	
 	IEnumerator startBall(){
