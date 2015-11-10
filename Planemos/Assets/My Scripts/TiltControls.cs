@@ -9,8 +9,8 @@ public class TiltControls : MonoBehaviour {
 	public float yBound;
 	private Vector3 playerPos;
 
-	public Text accelText;
-	public Text paddlePos;
+//	public Text accelText;
+//	public Text paddlePos;
 
 	// Update is called once per frame
 	void Update () {
@@ -19,8 +19,8 @@ public class TiltControls : MonoBehaviour {
 		playerPos = new Vector3 (Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z);
 		transform.position = playerPos;
 
-		accelText.text = "" + Input.acceleration.x + ", " + Input.acceleration.y + ", " + Input.acceleration.z;
-		paddlePos.text = "Paddle:  " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z;
+//		accelText.text = "" + Input.acceleration.x + ", " + Input.acceleration.y + ", " + Input.acceleration.z;
+//		paddlePos.text = "Paddle:  " + transform.position.x + ", " + transform.position.y + ", " + transform.position.z;
 
 	}
 
