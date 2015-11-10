@@ -14,20 +14,22 @@ public class CamRotator : MonoBehaviour
 
     void Update()
     {
-		Debug.Log (detectTime);
-        if (toOptions)
-            cam.transform.Rotate(0.0f, 2.0f, 0.0f, Space.World);
+		//Debug.Log (detectTime);
+        if (toOptions && cam.transform.eulerAngles.y < 90)
+            cam.transform.Rotate(0.0f, 1.0f, 0.0f, Space.World);
 
 		if (Input.GetMouseButtonDown (0)) {
 			if (!clicked) {
-				clicked = true;
 				detectTime = Time.time;
+				clicked = true;
 			}
 		} else if (Input.GetMouseButtonUp (0)) {
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
+
+			Debug.Log (Time.time - detectTime);
 			if (Physics.Raycast (ray, out hit) &&
-			    Time.time - detectTime < 3) {
+			    Time.time - detectTime < 1.5) {
 
 				if (!toOptions)
 					toOptions = true;
