@@ -7,60 +7,35 @@ public class CamRotator : MonoBehaviour
     private bool clicked = false;
     //private bool dragging = false;
     private float[] mousePos = new float[2];
-
+	private float detectTime = 0.0f;
     private bool toOptions = false;
 
     public Camera cam;
 
-    void OnMouseDown()
-    {
-        if (!clicked)
-        {
-            mousePos[0] = Input.mousePosition.x;
-            mousePos[1] = Input.mousePosition.y;
-            clicked = true;
-        }
-        //else if (clicked && Input.mousePosition.x != mousePos[0] &&
-        //    Input.mousePosition.y != mousePos[1])
-        //{
-        //    dragging = true;
-        //}
-    }
-
-    void OnMouseUp()
-    {
-        if (Input.mousePosition.x == mousePos[0] &&
-            Input.mousePosition.y == mousePos[1])
-        {            
-            toOptions = true;
-        }
-
-        clicked = false;
-    }
-
-    void OnClick()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
+		Debug.Log (detectTime);
         if (toOptions)
-            cam.transform.Rotate(0.0f, 2.0f, -1.0f);
+            cam.transform.Rotate(0.0f, 2.0f, 0.0f, Space.World);
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                //Debug.Log(toOptions);
-                if (!toOptions)
-                    toOptions = true;
-                else if (toOptions)
-                    toOptions = false;
-            }
-        }
+		if (Input.GetMouseButtonDown (0)) {
+			if (!clicked) {
+				clicked = true;
+				detectTime = Time.time;
+			}
+		} else if (Input.GetMouseButtonUp (0)) {
+			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast (ray, out hit) &&
+			    Time.time - detectTime < 3) {
+
+				if (!toOptions)
+					toOptions = true;
+				else if (toOptions)
+					toOptions = false;
+			}
+
+			clicked = false;
+		}
     }
 }
