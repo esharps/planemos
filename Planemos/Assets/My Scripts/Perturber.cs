@@ -4,9 +4,10 @@ using System.Collections;
 public class Perturber : MonoBehaviour {
 
 	public MapContstraints mapConstraints;
+	public float rotationalVelocity;
+	public float speed;
 
 	private Vector3 eulerAngleVelocity;
-	private float speed;
 	private Vector3 dir;
 	private ObjectRangeOfMotion motionField;
 	private Rigidbody rb;
@@ -16,10 +17,12 @@ public class Perturber : MonoBehaviour {
 		rb = GetComponent<Rigidbody> ();
 		motionField = mapConstraints.objectMotionField;
 		eulerAngleVelocity = new Vector3(
-			Random.Range (-200, 200), 
-			Random.Range (-200, 200), 
-			Random.Range (-200, 200)
+			Random.Range (-1, 1), 
+			Random.Range (-1, 1), 
+			Random.Range (-1, 1)
 		);
+
+		eulerAngleVelocity = eulerAngleVelocity.normalized * rotationalVelocity;
 
 		float x = Random.Range (-1.0f, 1.0f);
 		float y = Random.Range (-1.0f, 1.0f);
@@ -34,10 +37,10 @@ public class Perturber : MonoBehaviour {
 			break;
 		}
 
-		speed = Random.Range ( -20, 20 );
+//		speed = Random.Range ( -5, 5 );
 
-		rb.AddForce(dir.normalized * speed, ForceMode.Impulse);
-		rb.AddRelativeTorque (eulerAngleVelocity, ForceMode.Impulse);
+		rb.velocity = (dir.normalized * speed);
+		rb.AddTorque(eulerAngleVelocity * rb.mass, ForceMode.Impulse);
 	
 	}
 }

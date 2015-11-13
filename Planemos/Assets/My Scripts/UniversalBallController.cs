@@ -25,27 +25,31 @@ public class UniversalBallController : MonoBehaviour {
 		motionField = mapConstraints.objectMotionField;
 		axisOfPlay = mapConstraints.axisOfPlay;
 
+
+
 		if(motionField == ObjectRangeOfMotion.PLANAR) {
-			rb.constraints = rbConstraints = RigidbodyConstraints.FreezePositionY;
+			rbConstraints = RigidbodyConstraints.FreezePositionY;
 		}
+
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	void FixedUpdate(){
 		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
 		rb.MoveRotation(rb.rotation * deltaRotation);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (!ballInPlay) {
 			ballInPlay = true;
 			StartCoroutine(startBall());
 		}
-		
+
 		else {
 			if( volleyCount > 2 ){
 				volleyCount = 0;
-				speed *= 1.5f;
+				speed *= 1.1f;
 			}
 		}
 	}
@@ -53,14 +57,14 @@ public class UniversalBallController : MonoBehaviour {
 	void LateUpdate(){
 		rb.velocity = rb.velocity.normalized * speed;
 	}
-	
+
 	// Initializes the ball movement and rotation after the specified startDelay ( in seconds )
 	IEnumerator startBall(){
 		yield return new WaitForSeconds(startDelay);
 		rb.constraints = rbConstraints;
 		eulerAngleVelocity = new Vector3(
-			Random.Range (-200, 200), 
-			Random.Range (-200, 200), 
+			Random.Range (-200, 200),
+			Random.Range (-200, 200),
 			Random.Range (-200, 200)
 			);
 
@@ -99,7 +103,7 @@ public class UniversalBallController : MonoBehaviour {
 		}
 
 		return dir.normalized;
-	
+
 	}
 
 	// Resets the state of the ball to begin a new volley.

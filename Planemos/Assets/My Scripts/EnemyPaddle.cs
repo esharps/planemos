@@ -9,14 +9,13 @@ public class EnemyPaddle : MonoBehaviour {
 	public float xBound = 12.5f;
 	public float yBound = 8f;
 
+	private Rigidbody rb;
 
-//	// Use this for initialization
-//	void Start () {
-//		ball = GameObject.FindWithTag ("Ball");
-//		if (ball) {
-//			ballController = ball.GetComponent<BallController>();
-//		}
-//	}
+
+	// Use this for initialization
+	void Start () {
+		rb = GetComponent<Rigidbody> ();
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,7 +43,7 @@ public class EnemyPaddle : MonoBehaviour {
 			if(yPos < 0)
 				yPos += paddleSpeed;
 		}
-		transform.position = new Vector3(Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z);
+		rb.MovePosition(new Vector3(Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z));
 	}
 
 	bool inRange(){
