@@ -169,6 +169,7 @@ GameObject:
   - 224: {fileID: 524130929}
   - 222: {fileID: 524130928}
   - 114: {fileID: 524130927}
+  - 114: {fileID: 524130930}
   m_Layer: 5
   m_Name: TerminalText
   m_TagString: Untagged
@@ -197,7 +198,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8e03d19652a8740f88654dd97f955f46, type: 3}
-    m_FontSize: 36
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -207,7 +208,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: testflyer$ ./iphone_tutorial
+  m_Text: 
 --- !u!222 &524130928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -231,6 +232,22 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: 702, y: 288}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &524130930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 524130926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a15b922b0a70f46ab87c9f7911cf3a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPause: .200000003
+  cursorPause: .400000006
+  typeSound: {fileID: 0}
+  commandStr: ./test_tutorial cat
+  userIDStr: 'iOS-Device: ~ testFlyer$ '
 --- !u!1001 &699933550
 Prefab:
   m_ObjectHideFlags: 0
@@ -285,6 +302,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 718177217}
+  - 114: {fileID: 718177218}
   m_Layer: 0
   m_Name: TutorialController
   m_TagString: Untagged
@@ -304,6 +322,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &718177218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718177216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53aae511d59dd4dba81a79eec16b4b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCamera: {fileID: 2026968005}
 --- !u!1 &741962880
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +441,7 @@ RectTransform:
   - {fileID: 1255506132}
   - {fileID: 1572502074}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -483,7 +513,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043279192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437c2817c9a51d040990acb47c984442, type: 3}
+  m_Script: {fileID: 11500000, guid: 305476d1a380648a8b68fda67e08df5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hologram_light: {fileID: 407816, guid: fb8ca468b249b2148b71c9de40cfdaec, type: 2}
@@ -2336,7 +2366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &2026968006
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2357,7 +2387,7 @@ Behaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2026968005}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2026968009
 Camera:
   m_ObjectHideFlags: 0
