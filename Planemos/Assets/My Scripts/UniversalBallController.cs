@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -9,62 +9,63 @@ public class UniversalBallController : MonoBehaviour {
 	public float startDelay = 2f;
 
 
-	private Vector3 eulerAngleVelocity;
+//	private Vector3 eulerAngleVelocity;
 	Rigidbody rb;
 	private bool ballInPlay = false;
 	private int volleyCount = 0;
 	private float speed;
 	private ObjectRangeOfMotion motionField;
 	private AxisOfPlay axisOfPlay;
+	private Vector3 english;
 	private RigidbodyConstraints rbConstraints;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		rb.maxAngularVelocity = 50;
 		speed = startSpeed;
 		motionField = mapConstraints.objectMotionField;
 		axisOfPlay = mapConstraints.axisOfPlay;
+		english = Vector3.zero;
+
+
 
 		if(motionField == ObjectRangeOfMotion.PLANAR) {
-			rb.constraints = rbConstraints = RigidbodyConstraints.FreezePositionY;
+			rbConstraints = RigidbodyConstraints.FreezePositionY;
 		}
+
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	void FixedUpdate(){
-		Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
-		rb.MoveRotation(rb.rotation * deltaRotation);
+		rb.AddForce (english);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (!ballInPlay) {
 			ballInPlay = true;
 			StartCoroutine(startBall());
 		}
-		
+
 		else {
 			if( volleyCount > 2 ){
 				volleyCount = 0;
-				speed *= 1.5f;
+				speed *= 1.1f;
 			}
 		}
 	}
 
 	void LateUpdate(){
-		rb.velocity = rb.velocity.normalized * speed;
+
 	}
-	
+
 	// Initializes the ball movement and rotation after the specified startDelay ( in seconds )
 	IEnumerator startBall(){
 		yield return new WaitForSeconds(startDelay);
 		rb.constraints = rbConstraints;
-		eulerAngleVelocity = new Vector3(
-			Random.Range (-200, 200), 
-			Random.Range (-200, 200), 
-			Random.Range (-200, 200)
-			);
-
 		rb.velocity = getRandomVelocity();
+		rb.angularVelocity = getRandomDir() * 5;
 	}
 
 	// Returns a velocity vector in a random direction
@@ -80,18 +81,18 @@ public class UniversalBallController : MonoBehaviour {
 	// Will favor direction along the axis of play, as well as
 	// return a vector in the expected plane of motion (for 2D gameplay)
 	Vector3 getRandomDir(){
-		float x = Random.Range ( -1.0f, 1.0f );
-		float y = Random.Range ( -1.0f, 1.0f );
-		float z = Random.Range ( -1.0f, 1.0f );
+		float x = Random.Range ( -10.0f, 10.0f );
+		float y = Random.Range ( -10.0f, 10.0f );
+		float z = Random.Range ( -10.0f, 10.0f );
 		Vector3 dir = Vector3.zero;
 
 		if(axisOfPlay == AxisOfPlay.Z) {
-			x = Random.Range( -0.5f, 0.5f );
+			x = Random.Range( -3.0f, 3.0f );
 		}
 
 		switch (motionField) {
 		case ObjectRangeOfMotion.PLANAR:
-			dir = new Vector3(x, 0, y);
+			dir = new Vector3(x, 0, z);
 			break;
 		case ObjectRangeOfMotion.FULL_3D:
 			dir = new Vector3(x, y, z);
@@ -99,14 +100,15 @@ public class UniversalBallController : MonoBehaviour {
 		}
 
 		return dir.normalized;
-	
+
 	}
 
 	// Resets the state of the ball to begin a new volley.
 	public void resetBall(){
 		ballInPlay = false;
-		eulerAngleVelocity = Vector3.zero;
+//		eulerAngleVelocity = Vector3.zero;
 		rb.velocity = Vector3.zero;
+		english = Vector3.zero;
 		transform.position = Vector3.zero;
 		speed = startSpeed;
 		volleyCount = 0;
@@ -122,8 +124,20 @@ public class UniversalBallController : MonoBehaviour {
 	void OnCollisionEnter( Collision coll ){
 
 		// Increment the volley count if the ball collides with a paddle.
-		if(coll.gameObject.CompareTag ("Enemy") || coll.gameObject.CompareTag("Player"))
+		if (coll.gameObject.CompareTag ("Enemy") || coll.gameObject.CompareTag ("Player")) {
+			PaddleEnglish pe = coll.gameObject.GetComponent<PaddleEnglish>();
 			volleyCount++;
+			english.x = -pe.XVel * 50;
+			rb.velocity += new Vector3(pe.XVel * 10 , 0, 0);
+			rb.angularVelocity += new Vector3(0, pe.XVel * 100, 0);
 
+		} else {
+			english *= 0.25f;
+		}
+
+	}
+
+	void OnCollisionExit( Collision c ){
+		rb.velocity = rb.velocity.normalized * speed;
 	}
 }
