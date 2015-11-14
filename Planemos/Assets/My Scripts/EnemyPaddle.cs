@@ -2,19 +2,20 @@
 using System.Collections;
 
 public class EnemyPaddle : MonoBehaviour {
-	public GameObject ball;
-	public UniversalBallController ballController;
-	public float reactionRange = 50f;
-	public float paddleSpeed = 1f;
-	public float xBound = 12.5f;
-	public float yBound = 8f;
+	public GameObject 				ball;
+	public UniversalBallController	ballController;
+	public float 					paddleSpeed	= 1.0f;
+	public float 					xBound 		= 12.5f;
+	public float 					yBound 		= 8.0f;
 
-	private Rigidbody rb;
+	private Rigidbody 				rb;
+	private bool 					inRange;
 
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		inRange = false;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +24,7 @@ public class EnemyPaddle : MonoBehaviour {
 		float yPos = transform.position.y;
 		float ballXPos = ball.transform.position.x;	
 		float ballYPos = ball.transform.position.y;
-		if (inRange () && ballController.isMovingToward(transform.position)) {
+		if (inRange && ballController.isMovingToward(transform.position)) {
 			if (xPos < ballXPos)
 				xPos += paddleSpeed;
 			if (xPos > ballXPos)
@@ -46,9 +47,13 @@ public class EnemyPaddle : MonoBehaviour {
 		rb.MovePosition(new Vector3(Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z));
 	}
 
-	bool inRange(){
-		float distToBall = Vector3.Distance (transform.position, ball.transform.position);
-		return distToBall < reactionRange;
+	public void SetInRange(bool r){
+		inRange = r;
 	}
+
+//	bool inRange(){
+//		float distToBall = Vector3.Distance (transform.position, ball.transform.position);
+//		return distToBall < reactionRange;
+//	}
 	
 }
