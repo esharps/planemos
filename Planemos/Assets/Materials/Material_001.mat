@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Material_001
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 7682ab5e936afcb469d7fef4d5adf6eb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -20,7 +20,7 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1920, y: 1920}
+          m_Scale: {x: 0, y: 0}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -127,6 +127,18 @@ Material:
         first:
           name: _Metallic
         second: .159999996
+      data:
+        first:
+          name: _TintStrength
+        second: 1
+      data:
+        first:
+          name: _CoreStrength
+        second: 1
+      data:
+        first:
+          name: _CutOutLightCore
+        second: .442000002
     m_Colors:
       data:
         first:
@@ -136,3 +148,11 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .380392194, g: .380392194, b: .380392194, a: .441000015}
+      data:
+        first:
+          name: _CoreColor
+        second: {r: .396078467, g: .231372565, b: .349019617, a: .5}

@@ -73,6 +73,7 @@ ModelImporter:
     100130: Right_Wall_Top_005
     100132: Right_Wall_Top_006
     100134: Right_Wall_Top_007
+    100136: Inner_Light_001
     400000: Floor_and_Cieling
     400002: Floor_and_Cieling_001
     400004: Inner_Light
@@ -141,6 +142,7 @@ ModelImporter:
     400130: Right_Wall_Top_005
     400132: Right_Wall_Top_006
     400134: Right_Wall_Top_007
+    400136: Inner_Light_001
     2300000: Floor_and_Cieling
     2300002: Floor_and_Cieling_001
     2300004: Inner_Light
@@ -208,6 +210,7 @@ ModelImporter:
     2300128: Right_Wall_Top_005
     2300130: Right_Wall_Top_006
     2300132: Right_Wall_Top_007
+    2300134: Inner_Light_001
     3300000: Floor_and_Cieling
     3300002: Floor_and_Cieling_001
     3300004: Inner_Light
@@ -275,6 +278,7 @@ ModelImporter:
     3300128: Right_Wall_Top_005
     3300130: Right_Wall_Top_006
     3300132: Right_Wall_Top_007
+    3300134: Inner_Light_001
     4300000: Floor_and_Cieling_001
     4300002: Left_Wall_Top_007
     4300004: Left_Wall_Top_006
@@ -342,6 +346,7 @@ ModelImporter:
     4300128: Left_Wall_Bottom
     4300130: Floor_and_Cieling
     4300132: Inner_Light
+    4300134: Inner_Light_001
     7400000: Default Take
     9500000: //RootNode
   materials:
