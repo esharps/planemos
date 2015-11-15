@@ -9,7 +9,7 @@ public class TutorialManagerTF : MonoBehaviour {
 	public GameObject nextButton;
 	public GameObject prevButton;
 	public GameObject loginText;
-	//public GameObject menuPage1Text;
+	public GameObject menuPage1Text;
 	//public GameObject menuPage2Text;
 
 	// Use this for initialization
@@ -28,6 +28,7 @@ public class TutorialManagerTF : MonoBehaviour {
 		switch (GAME_STATE) 
 		{
 			case 1:
+			//Debug.Log ("GAME_STATE: 1");
 				runState1();
 				break;
 
@@ -47,14 +48,17 @@ public class TutorialManagerTF : MonoBehaviour {
 		uiCamera.SetActive (true);
 		quitButton.SetActive (true);
 		loginText.SetActive (true);
-		Debug.Log ("Start Tutorial");
+
 	}
 
-
+	// In GAME_STATE 1, the tutorial prints first page of text
+	// 
 	public void runState1() {
+
 		loginText.SetActive (false);
 		nextButton.SetActive (true);
-
+		menuPage1Text.SetActive (true);
 
 	}
+
 }

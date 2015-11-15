@@ -5,6 +5,9 @@ public class MainMenuStartupTF : MonoBehaviour {
 
 	public static int menuFinished = 0;
 
+	// Amount of time between menu load and canvas render
+	public float tDelay = 1.0f;
+
     private float runTime = 0.0f;
 
     private bool lit = false;
@@ -54,10 +57,19 @@ public class MainMenuStartupTF : MonoBehaviour {
 
 			menuFinished = 1;
 
-			//Ready to run terminal login sequence
-			TutorialManagerTF.GAME_STATE = 0;
+			if(diff < 5.5 + tDelay)
+				StartCoroutine(TimeDelay(tDelay));
+			 
+		
 			Debug.Log ("Hologram finished loading.");
-        }
+        } 
 	    
+	}
+
+	IEnumerator TimeDelay(float tDelay) {
+		Debug.Log ("Start Coroutine");
+		yield return new WaitForSeconds (tDelay);
+		//Ready to run terminal login sequence
+		TutorialManagerTF.GAME_STATE = 0;
 	}
 }
