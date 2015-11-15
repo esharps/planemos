@@ -128,7 +128,6 @@ MonoBehaviour:
   startDelay: 2
   zBound: 45
   xBound: 100
-  ballPosText: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   eulerAngleVelocity: {x: 0, y: 0, z: 0}
 --- !u!135 &13590086

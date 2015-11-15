@@ -8,6 +8,8 @@ TagManager:
   - Paddle
   - Enemy
   - Portal
+  - 4:3 Preset
+  - 16:9 Preset
   layers:
   - Default
   - TransparentFX

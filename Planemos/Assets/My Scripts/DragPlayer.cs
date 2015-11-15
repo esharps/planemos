@@ -40,7 +40,7 @@ public class DragPlayer : MonoBehaviour
         while (Input.GetMouseButton(0))
         {
             var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            hit.rigidbody.MovePosition(ray.GetPoint(hit.distance));
+            hit.rigidbody.MovePosition(new Vector3(ray.GetPoint(hit.distance).x, ray.GetPoint(hit.distance).y, transform.position.z));
             yield return null;
         }
     }
