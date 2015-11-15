@@ -4376,6 +4376,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11464996, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464996, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464996, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400186, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11402016, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
   m_IsPrefabParent: 0
