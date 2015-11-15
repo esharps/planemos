@@ -143,6 +143,7 @@ GameObject:
   - 4: {fileID: 463886}
   - 114: {fileID: 11437906}
   - 136: {fileID: 13643292}
+  - 114: {fileID: 11480150}
   m_Layer: 0
   m_Name: Menu Options Rotator
   m_TagString: Untagged
@@ -1010,13 +1011,24 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 165970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df339645d80a1454b82a0337eb2b82df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   menuRotator: {fileID: 165970}
-  mainCam: {fileID: 0}
+--- !u!114 &11480150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaede71e9e9ae4a07a63c8aa025e0d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuRotator: {fileID: 165970}
 --- !u!136 &13643292
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1036,7 +1048,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: menuRotator
+      value: 
+      objectReference: {fileID: 165970}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165970}
