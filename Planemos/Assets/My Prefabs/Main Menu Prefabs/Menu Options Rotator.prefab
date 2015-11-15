@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuRotator: {fileID: 165970}
-  selector: {fileID: 0}
+  mainCam: {fileID: 0}
 --- !u!136 &13643292
 CapsuleCollider:
   m_ObjectHideFlags: 1

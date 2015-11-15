@@ -3,8 +3,8 @@ using System.Collections;
 
 public class EnemyPaddle : MonoBehaviour {
 	public GameObject ball;
-	public BallController ballController;
-	public float tooClose = 50f;
+	public UniversalBallController ballController;
+	public float reactionRange = 50f;
 	public float paddleSpeed = 1f;
 	public float xBound = 12.5f;
 	public float yBound = 8f;
@@ -24,7 +24,7 @@ public class EnemyPaddle : MonoBehaviour {
 		float yPos = transform.position.y;
 		float ballXPos = ball.transform.position.x;	
 		float ballYPos = ball.transform.position.y;
-		if (closeEnough () && ballController.isMovingToward(transform.position)) {
+		if (inRange () && ballController.isMovingToward(transform.position)) {
 			if (xPos < ballXPos)
 				xPos += paddleSpeed;
 			if (xPos > ballXPos)
@@ -47,9 +47,9 @@ public class EnemyPaddle : MonoBehaviour {
 		transform.position = new Vector3(Mathf.Clamp (xPos, -xBound, xBound), Mathf.Clamp(yPos, -yBound, yBound), transform.position.z);
 	}
 
-	bool closeEnough(){
+	bool inRange(){
 		float distToBall = Vector3.Distance (transform.position, ball.transform.position);
-		return distToBall < tooClose;
+		return distToBall < reactionRange;
 	}
 	
 }

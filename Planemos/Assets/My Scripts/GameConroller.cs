@@ -23,7 +23,7 @@ public class GameConroller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ball.SetActive (true);
-		ball.GetComponent<BallController> ().enabled = true;
+		ball.GetComponent<UniversalBallController> ().enabled = true;
 		player.SetActive (true);
 		
 //		playerScore = 0;
