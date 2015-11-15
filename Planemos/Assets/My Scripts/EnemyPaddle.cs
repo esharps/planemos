@@ -56,6 +56,7 @@ public class EnemyPaddle : MonoBehaviour {
 		}
 		return false;
 	}
+
 	public void SetInRange(bool r){
 		inRange = r;
 	}
