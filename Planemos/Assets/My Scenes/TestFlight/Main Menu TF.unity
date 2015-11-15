@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15b922b0a70f46ab87c9f7911cf3a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coroutTimeDelay: 6
   letterPause: .200000003
   cursorPause: .400000006
   typeSound: {fileID: 0}
@@ -334,6 +335,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCamera: {fileID: 2026968005}
+  quitButton: {fileID: 1755608185}
+  nextButton: {fileID: 1572502073}
+  prevButton: {fileID: 1255506131}
+  loginText: {fileID: 1867041187}
 --- !u!1 &741962880
 GameObject:
   m_ObjectHideFlags: 0

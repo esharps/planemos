@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ScoreSensor : MonoBehaviour {
 
-	public GUIText scoreText;
+	public  Text scoreText;
 	public UniversalBallController bc;
 	private int score;
 

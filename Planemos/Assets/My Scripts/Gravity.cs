@@ -1,25 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
-public class Gravity : MonoBehaviour 
-{	
+public class Gravity : MonoBehaviour
+{
+	public GameObject ball;
 	public float range;
-	public float force;
-	
-	void FixedUpdate () 
-	{
-		Collider[] cols  = Physics.OverlapSphere(transform.position, range); 
-		
-		foreach(Collider c in cols)
-		{
-			GameObject go = c.gameObject;
+	public float multiplier;
 
-			if(go.CompareTag("Ball"))
-			{
-				Rigidbody rb = c.attachedRigidbody;
-				Vector3 offset = transform.position - go.transform.position;
-				rb.AddForce( offset / offset.sqrMagnitude * force);
-			}
+	void FixedUpdate ()
+	{
+		Vector3 offset = transform.position - ball.transform.position;
+		if( offset.magnitude <= range )
+		{
+			Rigidbody rb = ball.GetComponent<Rigidbody>();
+			rb.AddForce( offset / offset.sqrMagnitude * GetComponent<Rigidbody>().mass * multiplier);
 		}
 	}
 }

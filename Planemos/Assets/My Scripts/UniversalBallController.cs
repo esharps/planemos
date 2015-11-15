@@ -82,7 +82,7 @@ public class UniversalBallController : MonoBehaviour {
 	// return a vector in the expected plane of motion (for 2D gameplay)
 	Vector3 getRandomDir(){
 		float x = Random.Range ( -10.0f, 10.0f );
-		float y = Random.Range ( -10.0f, 10.0f );
+		float y = Random.Range ( -3.0f, 3.0f );
 		float z = Random.Range ( -10.0f, 10.0f );
 		Vector3 dir = Vector3.zero;
 
@@ -101,6 +101,10 @@ public class UniversalBallController : MonoBehaviour {
 
 		return dir.normalized;
 
+	}
+
+	public void ResetVelocity(){
+		rb.velocity = rb.velocity.normalized * speed;
 	}
 
 	// Resets the state of the ball to begin a new volley.
@@ -128,16 +132,18 @@ public class UniversalBallController : MonoBehaviour {
 			PaddleEnglish pe = coll.gameObject.GetComponent<PaddleEnglish>();
 			volleyCount++;
 			english.x = -pe.XVel * 50;
-			rb.velocity += new Vector3(pe.XVel * 10 , 0, 0);
-			rb.angularVelocity += new Vector3(0, pe.XVel * 100, 0);
+			english.y = -pe.YVel * 50;
+			rb.velocity += new Vector3(pe.XVel * 10, pe.YVel * 10, 0);
+			rb.angularVelocity += new Vector3(pe.YVel * 100, pe.XVel * 100, 0);
 
 		} else {
-			english *= 0.25f;
+			english = Vector3.zero;
 		}
 
 	}
+	
 
 	void OnCollisionExit( Collision c ){
-		rb.velocity = rb.velocity.normalized * speed;
+		ResetVelocity();
 	}
 }
