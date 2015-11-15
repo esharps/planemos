@@ -4574,8 +4574,8 @@ MonoBehaviour:
   axisOfPlay: 0
   perspective: 1
   CamPositionDefault: {x: 0, y: 6, z: -47}
-  CamPosition_16_9: {x: 0, y: 0, z: -47}
-  CamPosition_4_3: {x: 0, y: 0, z: -50}
+  CamPosition_16_9: {x: 0, y: 6, z: -47}
+  CamPosition_4_3: {x: 0, y: 6, z: -50}
   CamRotationDefault: {x: 15, y: 0, z: 0}
   CamRotation_16_9: {x: 15, y: 0, z: 0}
   CamRotation_4_3: {x: 15, y: 0, z: 0}
