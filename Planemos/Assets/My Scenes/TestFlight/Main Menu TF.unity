@@ -414,6 +414,45 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741962880}
+--- !u!1 &747755868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 747755870}
+  - 114: {fileID: 747755869}
+  m_Layer: 0
+  m_Name: ButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &747755869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747755868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb97b6eb7db742fdb811273fadc016f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &747755870
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747755868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &957522030
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,8 +483,8 @@ RectTransform:
   m_Children:
   - {fileID: 1867041188}
   - {fileID: 1755608186}
-  - {fileID: 1255506132}
   - {fileID: 1572502074}
+  - {fileID: 1255506132}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
@@ -522,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305476d1a380648a8b68fda67e08df5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tDelay: 1.20000005
   hologram_light: {fileID: 407816, guid: fb8ca468b249b2148b71c9de40cfdaec, type: 2}
   light_rays: {fileID: 440458, guid: 51048cde5890a9b4cbdb9044770c7dc7, type: 2}
   planemos: {fileID: 434904, guid: 952657d469d41894a82bdcf9d659c6ec, type: 2}
@@ -630,7 +670,7 @@ RectTransform:
   m_Children:
   - {fileID: 337382387}
   m_Father: {fileID: 957522031}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1222, y: 136}
@@ -674,7 +714,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1255506134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 747755869}
+        m_MethodName: PressPrev
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1255506134
@@ -1858,7 +1909,7 @@ RectTransform:
   m_Children:
   - {fileID: 1934443581}
   m_Father: {fileID: 957522031}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 1309, y: 136}
@@ -1902,7 +1953,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572502076}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 747755869}
+        m_MethodName: PressNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1572502076
@@ -1984,7 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab8a319dff2844c48df497bf125074b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPause: .0500000007
+  letterPause: .0299999993
   startSound: {fileID: 0}
 --- !u!114 &1663685672
 MonoBehaviour:
@@ -2017,7 +2079,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "PLANEMOS  \nTest Build v1.0\nReleased on 11/16/15\n"
+  m_Text: "PLANEMOS  \nTest Build v1.0\nReleased on 11/16/15\nProperty of NCSU SD
+    Team 17\n------------------------\n\nThe following is a guided tutorial that will
+    lead you through the basic gameplay mechanics and control schemes we intend to
+    implement in the full-version game. \n\nPlease press the NEXT button in the bottom
+    right ... \n"
 --- !u!222 &1663685673
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2176,7 +2242,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1755608188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 747755869}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1755608188
