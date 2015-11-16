@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="AppIcon.svg"
-   inkscape:export-filename="C:\Users\Euphemism\Documents\1My Stuff\NCSU\CSC-492 Senior Design\App Icon\AppIcon iPhone 6.png"
-   inkscape:export-xdpi="8.9693413"
-   inkscape:export-ydpi="8.9693413">
+   inkscape:export-filename="C:\Users\Euphemism\Documents\1My Stuff\NCSU\CSC-492 Senior Design\App Icon\Square\AppIcon iPad Air.png"
+   inkscape:export-xdpi="5.9795609"
+   inkscape:export-ydpi="5.9795609">
   <defs
      id="defs4">
     <inkscape:path-effect
@@ -164,6 +164,31 @@
        fx="419.30182"
        fy="-468.73029"
        r="225.54998" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Feather"
+       id="filter4550">
+      <feGaussianBlur
+         stdDeviation="66.67"
+         result="blur"
+         id="feGaussianBlur4552" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite4554" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite4556" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite4558" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -173,10 +198,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.40305086"
-     inkscape:cx="769.95047"
-     inkscape:cy="1433.7924"
+     inkscape:cx="381.22379"
+     inkscape:cy="1356.6128"
      inkscape:document-units="px"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1292"
      inkscape:window-height="746"
@@ -236,6 +261,16 @@
        x="68.690376"
        y="-850.7652"
        ry="137.38075" />
+    <image
+       sodipodi:absref="C:\Users\Euphemism\Documents\1My Stuff\NCSU\CSC-492 Senior Design\Concept Art\Reference\space-wallpaper2.jpg"
+       y="-830.57861"
+       x="74.883156"
+       id="image4214"
+       xlink:href="file:///C:/Users/Euphemism/Documents/1My%20Stuff/NCSU/CSC-492%20Senior%20Design/Concept%20Art/Reference/space-wallpaper2.jpg"
+       style="image-rendering:optimizeQuality;filter:url(#filter4550)"
+       preserveAspectRatio="none"
+       height="1166.2532"
+       width="1166.2532" />
     <rect
        ry="137.38075"
        y="-850.7652"
