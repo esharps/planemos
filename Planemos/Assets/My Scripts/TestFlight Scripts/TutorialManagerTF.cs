@@ -10,7 +10,7 @@ public class TutorialManagerTF : MonoBehaviour {
 	public GameObject prevButton;
 	public GameObject loginText;
 	public GameObject menuPage1Text;
-	//public GameObject menuPage2Text;
+	public GameObject menuPage2Text;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +31,9 @@ public class TutorialManagerTF : MonoBehaviour {
 			//Debug.Log ("GAME_STATE: 1");
 				runState1();
 				break;
+			case 2:
+				runState2();
+				break;
 
 				
 
@@ -40,24 +43,51 @@ public class TutorialManagerTF : MonoBehaviour {
 
 	}
 
-	// In GAME_STATE 0, game runs automated subroutine that simulates
+	// In GAME_STATE 0, game runs AUTOMATED subroutine that simulates
 	// running the tutorial as a program
-	// GAME_STATE is changed by AutoTypeTF class through coroutine
+	// GAME_STATE is changed to 1 by AutoTypeTF class through coroutine
+	// (i.e.) state change is NOT driven by user
 	public void runState0() {
 
+		// Always active game objects in scene
 		uiCamera.SetActive (true);
 		quitButton.SetActive (true);
+
+		// Active game objects in state 0
 		loginText.SetActive (true);
+
+		// Disabled objects in state 0
+		nextButton.SetActive (false);
+		prevButton.SetActive (false);
+		menuPage1Text.SetActive (false);
+		menuPage2Text.SetActive (false);
 
 	}
 
 	// In GAME_STATE 1, the tutorial prints first page of text
-	// 
+	// GAME_STATE is changed to 2 by user clicking NEXT button
 	public void runState1() {
 
-		loginText.SetActive (false);
 		nextButton.SetActive (true);
 		menuPage1Text.SetActive (true);
+
+		loginText.SetActive (false);
+		prevButton.SetActive (false);
+		menuPage2Text.SetActive (false);
+	}
+
+	// IN GAME_STATE 2, tutorial prints second page of text
+	// GAME_STATE changed to 3 by user clicking NEXT button
+	// GAME_STAE changed to 1 by user clicking PREV button
+	public void runState2() {
+
+		nextButton.SetActive (true);
+		prevButton.SetActive (true);
+		menuPage2Text.SetActive (true);
+		
+		loginText.SetActive (false);
+		menuPage1Text.SetActive (false);
+	
 
 	}
 

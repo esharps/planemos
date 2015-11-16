@@ -9,6 +9,7 @@ public class ButtonManagerTF : MonoBehaviour {
 	// OnClick() NEXT button in tutorial
 	public void PressNext() {
 		TutorialManagerTF.GAME_STATE += 1;
+		Debug.Log ("GAME_STATE:" + TutorialManagerTF.GAME_STATE);
 	}
 
 	// OnClick() PREV button in tutorial
@@ -21,5 +22,11 @@ public class ButtonManagerTF : MonoBehaviour {
 
 		//NOTE: QUIT only works after project is built and run
 		Application.Quit ();
+	}
+
+	public void Load2dSceneTF() {
+
+		// In tutorial, top-down section at index 1 in build
+		Application.LoadLevel (1);
 	}
 }
