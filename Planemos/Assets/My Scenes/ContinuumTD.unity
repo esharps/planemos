@@ -173,34 +173,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11490950, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 806586586}
     - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
-    - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Continue
-      objectReference: {fileID: 0}
     - target: {fileID: 11463818, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
-    - target: {fileID: 11463818, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+    - target: {fileID: 11494472, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
     - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMain
-      objectReference: {fileID: 0}
-    - target: {fileID: 160832, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 485031365}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
   m_IsPrefabParent: 0
@@ -475,7 +467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &485031365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,6 +1841,12 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 116006, guid: 500b0d3dd10d64577989093225174de6, type: 2}
   m_PrefabInternal: {fileID: 1453634706}
+--- !u!114 &806586586 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11481944, guid: 500b0d3dd10d64577989093225174de6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1453634706}
+  m_Script: {fileID: 11500000, guid: 42b28c0c1ce6a4526b7c78e3eb8e3e1b, type: 3}
 --- !u!114 &806586587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,7 +1974,7 @@ Transform:
   - {fileID: 2144125653}
   - {fileID: 824356553}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1 &1004813290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,6 +2262,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
+    - target: {fileID: 170270, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
   m_IsPrefabParent: 0
@@ -2450,6 +2452,10 @@ Prefab:
     - target: {fileID: 11454756, guid: 500b0d3dd10d64577989093225174de6, type: 2}
       propertyPath: xBound
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481944, guid: 500b0d3dd10d64577989093225174de6, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11455746, guid: 500b0d3dd10d64577989093225174de6, type: 2}
@@ -2806,7 +2812,7 @@ Transform:
   - {fileID: 1122883981}
   - {fileID: 1154198080}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!1001 &2092645951
 Prefab:
   m_ObjectHideFlags: 0
