@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 7
   AndroidProfiler: 0
   defaultScreenOrientation: 4
-  targetDevice: 0
+  targetDevice: 2
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -163,26 +163,44 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
-      m_Size: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
   - m_BuildTarget: iPhone
     m_Icons:
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
-    - m_Icon: {fileID: 0}
-      m_Size: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 0
+      m_Height: 0
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -276,6 +294,8 @@ PlayerSettings:
   ps4pnGameCustomData: 1
   playerPrefsSupport: 0
   ps4ReprojectionSupport: 0
+  ps4UseAudio3dBackend: 0
+  ps4Audio3dVirtualSpeakerCount: 14
   ps4attribUserManagement: 0
   ps4attribMoveSupport: 0
   ps4attrib3DSupport: 0

@@ -16,30 +16,16 @@ public class TutorialTyperTF : MonoBehaviour {
 	Text tutorialGameText;
 	string textString;
 
-	// Use this for initialization
+	// Use this for initialization, each time new UI text
+	// is displayed on the screen
 	void Start () {
+
 		tutorialGameText = GetComponent<Text> ();
 		textString = tutorialGameText.text;
-		Debug.Log ("HIT");
 		tutorialGameText.text = "";
 		StartCoroutine (TypeTutorialText ());
-
 	}
-
-	void Update() {
-
-		//if (TutorialManagerTF.GAME_STATE == 1) {
-		//	StartCoroutine(TypeTutorialText ());
-		//}
-
-		if (TutorialManagerTF.GAME_STATE == 2) {
-
-
-		}
-
-	}
-
-
+	
 	// Subroutine that simulates using computer terminal to "run" tutorial
 	IEnumerator TypeTutorialText () {
 
@@ -54,9 +40,10 @@ public class TutorialTyperTF : MonoBehaviour {
 			yield return new WaitForSeconds(letterPause);
 		}
 
-	
-		yield return new WaitForSeconds(1.0f);
-		TutorialManagerTF.GAME_STATE = 1;
+		if (TutorialManagerTF.GAME_STATE == 0) {
+			yield return new WaitForSeconds (1.0f);
+			TutorialManagerTF.GAME_STATE = 1;
+		}
 	}
 	
 }
