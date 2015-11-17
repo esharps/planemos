@@ -8,9 +8,11 @@ public class TutorialManagerTF : MonoBehaviour {
 	public GameObject quitButton;
 	public GameObject nextButton;
 	public GameObject prevButton;
+	public GameObject playButton
 	public GameObject loginText;
 	public GameObject menuPage1Text;
 	public GameObject menuPage2Text;
+
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +36,8 @@ public class TutorialManagerTF : MonoBehaviour {
 			case 2:
 				runState2();
 				break;
-
+			case 3:
+			runState3();
 				
 
 
@@ -59,6 +62,7 @@ public class TutorialManagerTF : MonoBehaviour {
 		// Disabled objects in state 0
 		nextButton.SetActive (false);
 		prevButton.SetActive (false);
+		playButton.SetActive (false);
 		menuPage1Text.SetActive (false);
 		menuPage2Text.SetActive (false);
 
@@ -73,6 +77,7 @@ public class TutorialManagerTF : MonoBehaviour {
 
 		loginText.SetActive (false);
 		prevButton.SetActive (false);
+		playButton.SetActive (false);
 		menuPage2Text.SetActive (false);
 	}
 
@@ -86,9 +91,10 @@ public class TutorialManagerTF : MonoBehaviour {
 		menuPage2Text.SetActive (true);
 		
 		loginText.SetActive (false);
+		playButton.SetActive (false);
 		menuPage1Text.SetActive (false);
-	
-
 	}
 
+	// IN GAME_STATE 3, tutorial prints final page of text 
+	// GAME_STATE changed to 4 by user clicking NEXT 
 }
