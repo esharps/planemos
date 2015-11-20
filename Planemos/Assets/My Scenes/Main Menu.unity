@@ -164,6 +164,10 @@ Prefab:
       propertyPath: m_Name
       value: options_menu_background
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: c38d6402b78213e4886bea6619b84fb0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7726f18ee9d36d0449dc46756bd84f21, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38d6402b78213e4886bea6619b84fb0, type: 3}
   m_IsPrefabParent: 0
@@ -485,6 +489,10 @@ Prefab:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: c38d6402b78213e4886bea6619b84fb0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7726f18ee9d36d0449dc46756bd84f21, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c38d6402b78213e4886bea6619b84fb0, type: 3}
   m_IsPrefabParent: 0
@@ -639,7 +647,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1934129540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa09fc18def287247a2fec92214b500d, type: 3}
   m_Name: 
