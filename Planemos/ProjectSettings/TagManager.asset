@@ -10,6 +10,8 @@ TagManager:
   - Portal
   - 4:3 Preset
   - 16:9 Preset
+  - EnemyScoring
+  - PlayerScoring
   layers:
   - Default
   - TransparentFX

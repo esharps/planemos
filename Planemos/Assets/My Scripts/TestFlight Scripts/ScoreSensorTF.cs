@@ -2,23 +2,32 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class ScoreSensor : MonoBehaviour {
-
+public class ScoreSensorTF : MonoBehaviour {
+	
 	public  Text scoreText;
 	public UniversalBallController bc;
 	private int score;
-
+	
 	public void Start(){
+
 		score = 0;
 		scoreText.text = "0";
 	}
-
+	
 	void OnCollisionEnter(Collision c){
 		if (c.gameObject.CompareTag ("Ball")) {
+			
+			if(scoreText.CompareTag("PlayerScoring"))
+				ScoreManager.playerScore++;
+				Debug.Log ("Player Scored");
 
+			if(scoreText.CompareTag("EnemyScoring"))
+				ScoreManager.enemyScore++;
+				Debug.Log ("Enemy Scored");
 
-			Debug.Log ("Someone Scored");
-			scoreText.text = score.ToString ();
+			score++;
+			scoreText.text = "" + score;
+
 			bc.resetBall ();
 		}
 	}
