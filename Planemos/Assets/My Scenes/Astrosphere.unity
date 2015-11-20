@@ -311,6 +311,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 293029343}
   - 114: {fileID: 293029344}
+  - 114: {fileID: 293029345}
   m_Layer: 0
   m_Name: MapController
   m_TagString: Untagged
@@ -346,6 +347,27 @@ MonoBehaviour:
   sepPrefab: {fileID: 181886, guid: 75155513ddd3c0d46ba8ff75d77d0b00, type: 2}
   enemyPrefab: {fileID: 141550, guid: 74294d2314709db42a02bd1f38e9fe60, type: 2}
   playerPrefab: {fileID: 154826, guid: 2e7024c359c3ddf4c819f91839364084, type: 2}
+--- !u!114 &293029345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 293029342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276f6b7bd4bfc8e46b870cb3cce120fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectMotionField: 0
+  paddleMotionField: 2
+  axisOfPlay: 1
+  perspective: 1
+  CamPositionDefault: {x: 0, y: 0, z: 0}
+  CamPosition_16_9: {x: 0, y: 0, z: 0}
+  CamPosition_4_3: {x: 0, y: 0, z: 0}
+  CamRotationDefault: {x: 0, y: 0, z: 0}
+  CamRotation_16_9: {x: 0, y: 0, z: 0}
+  CamRotation_4_3: {x: 0, y: 0, z: 0}
 --- !u!1 &346784265 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100044, guid: 3319aef97184cb447ad53ed65308ba74, type: 3}
