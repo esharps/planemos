@@ -9,9 +9,6 @@ public class ResponsiveCamera : MonoBehaviour {
 	void Awake () {
 		transform.position = mapContstraints.CamPositionDefault;
 		transform.eulerAngles = mapContstraints.CamRotationDefault;
-		Debug.Log ("16:9: " + 16.0f/9.0f);
-		Debug.Log ("4:3: " + 4.0f/3.0f);
-		Debug.Log ("Aspect: " + Camera.main.aspect);
 
 		if (System.Math.Abs (Camera.main.aspect - 16.0f / 9.0f) < EPSILON){
 			transform.position = mapContstraints.CamPosition_16_9;
@@ -21,9 +18,6 @@ public class ResponsiveCamera : MonoBehaviour {
 		else if (System.Math.Abs (Camera.main.aspect - 4.0f / 3.0f) < EPSILON){
 			transform.position = mapContstraints.CamPosition_4_3;
 			transform.eulerAngles = mapContstraints.CamRotation_4_3;
-			Debug.Log("4:3");
-		} else {
-			Debug.Log("Default");
 		}
 	}
 }
