@@ -11,6 +11,7 @@ public class TutorialTyperTF : MonoBehaviour {
 	
 	public float letterPause = 0.05f;
 	public AudioClip startSound;
+	public static int textFinishLoading = 0;
 
 	// Read in characters of tutorial text first
 	Text tutorialGameText;
@@ -29,6 +30,9 @@ public class TutorialTyperTF : MonoBehaviour {
 	// Subroutine that simulates using computer terminal to "run" tutorial
 	IEnumerator TypeTutorialText () {
 
+		//Text has not starting loading
+		textFinishLoading = 0;
+
 		/*TODO Play startSound once indicating new page */
 
 		foreach (char letter in textString.ToCharArray()) {
@@ -43,7 +47,13 @@ public class TutorialTyperTF : MonoBehaviour {
 		if (TutorialManagerTF.GAME_STATE == 0) {
 			yield return new WaitForSeconds (1.0f);
 			TutorialManagerTF.GAME_STATE = 1;
+		} else {
+			yield return new WaitForSeconds (1.0f);
 		}
+
+
+		//Text has been fully loaded into console
+		textFinishLoading = 1;
 	}
 	
 }

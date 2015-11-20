@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TutorialManagerTF : MonoBehaviour {
+public class TutorialMenuManagerTF : MonoBehaviour {
 
 	public static int GAME_STATE;
 
@@ -32,11 +32,6 @@ public class TutorialManagerTF : MonoBehaviour {
 			runState0();
 		} 
 
-
-		nextButton.SetActive (false);
-		prevButton.SetActive (false);
-		playButton.SetActive (false);
-	
 		switch (GAME_STATE) 
 		{
 			case 1:
@@ -83,12 +78,14 @@ public class TutorialManagerTF : MonoBehaviour {
 	// GAME_STATE is changed to 2 by user clicking NEXT button
 	public void runState1() {
 
-		menuPage1Text.SetActive (true);
-
 		loginText.SetActive (false);
+		nextButton.SetActive (false);
 		prevButton.SetActive (false);
 		playButton.SetActive (false);
 		menuPage2Text.SetActive (false);
+		menuPage3Text.SetActive (false);
+
+		menuPage1Text.SetActive (true);
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
 			nextButton.SetActive (true);
@@ -100,14 +97,15 @@ public class TutorialManagerTF : MonoBehaviour {
 	// GAME_STAE changed to 1 by user clicking PREV button
 	public void runState2() {
 
-		menuPage2Text.SetActive (true);
-
 		prevButton.SetActive (false);
 		nextButton.SetActive (false);
 		loginText.SetActive (false);
 		playButton.SetActive (false);
 		menuPage1Text.SetActive (false);
 		menuPage3Text.SetActive (false);
+
+		// Activate Page 2
+		menuPage2Text.SetActive (true);
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
 			nextButton.SetActive (true);
@@ -117,11 +115,10 @@ public class TutorialManagerTF : MonoBehaviour {
 	}
 
 	// IN GAME_STATE 3, tutorial prints final page of text 
-	// GAME_STATE changed to 4 by user clicking PLAY GAME 
+	// GAME_STATE changed to 4 by user clicking NEXT 
 
 	public void runState3() {
 
-		menuPage3Text.SetActive (true);
 
 		prevButton.SetActive (false);
 		loginText.SetActive (false);
@@ -129,8 +126,12 @@ public class TutorialManagerTF : MonoBehaviour {
 		menuPage1Text.SetActive (false);
 		menuPage2Text.SetActive (false);
 		playButton.SetActive (false);
+
+		// Activate Page 3
+		menuPage3Text.SetActive (true);
+
 		if (TutorialTyperTF.textFinishLoading == 1) {
-			playButton.SetActive (false);
+			Debug.Log ("TEXT FINISHED LOADING");
 			prevButton.SetActive (true);
 			playButton.SetActive (true);
 		}
