@@ -4,20 +4,21 @@ using UnityEngine.UI;
 
 public class UniversalBallController : MonoBehaviour {
 
-	public MapContstraints mapConstraints;
-	public float startSpeed;
-	public float startDelay = 2f;
+	
+	public MapContstraints 	mapConstraints;
+	public float 			startSpeed;
+	public float 			startDelay;
 
 
-//	private Vector3 eulerAngleVelocity;
+	const float velocityConstraint = 0.5f;
 	Rigidbody rb;
-	private bool ballInPlay = false;
-	private int volleyCount = 0;
-	private float speed;
-	private ObjectRangeOfMotion motionField;
-	private AxisOfPlay axisOfPlay;
-	private Vector3 english;
-	private RigidbodyConstraints rbConstraints;
+	bool ballInPlay = false;
+	int volleyCount = 0;
+	float speed;
+	ObjectRangeOfMotion motionField;
+	AxisOfPlay axisOfPlay;
+	Vector3 english;
+	RigidbodyConstraints rbConstraints;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +28,6 @@ public class UniversalBallController : MonoBehaviour {
 		motionField = mapConstraints.objectMotionField;
 		axisOfPlay = mapConstraints.axisOfPlay;
 		english = Vector3.zero;
-
-
 
 		if(motionField == ObjectRangeOfMotion.PLANAR) {
 			rbConstraints = RigidbodyConstraints.FreezePositionY;
@@ -57,7 +56,7 @@ public class UniversalBallController : MonoBehaviour {
 	}
 
 	void LateUpdate(){
-
+		ResetVelocity();
 	}
 
 	// Initializes the ball movement and rotation after the specified startDelay ( in seconds )
@@ -104,7 +103,37 @@ public class UniversalBallController : MonoBehaviour {
 	}
 
 	public void ResetVelocity(){
-		rb.velocity = rb.velocity.normalized * speed;
+
+		float angle = Vector3.Angle ( new Vector3(0, 0, 1), rb.velocity );
+		float adjustToAngle = 0.0f;
+
+		if( angle > 60 ){
+			float x = rb.velocity.x;
+			float z = rb.velocity.z;
+			if( z > 0 ){
+				if(x > 0){
+					adjustToAngle = 60;
+				}else{
+					adjustToAngle = 310;
+				}
+			} else if ( z < 0 ){
+				if(x > 0){
+					adjustToAngle = 120;
+				}else{
+					adjustToAngle = 240;
+				}
+			}
+		}
+
+
+		if(adjustToAngle > 0 ){
+			float x = Mathf.Sin(adjustToAngle * Mathf.Deg2Rad);
+			float z = Mathf.Cos(adjustToAngle * Mathf.Deg2Rad);
+			rb.velocity = new Vector3(x, 0, z) * speed;
+		} else {
+			rb.velocity = rb.velocity.normalized * speed;
+		}
+
 	}
 
 	// Resets the state of the ball to begin a new volley.
@@ -143,7 +172,7 @@ public class UniversalBallController : MonoBehaviour {
 	}
 	
 
-	void OnCollisionExit( Collision c ){
-		ResetVelocity();
-	}
+//	void OnCollisionExit( Collision c ){
+//		ResetVelocity();
+//	}
 }
