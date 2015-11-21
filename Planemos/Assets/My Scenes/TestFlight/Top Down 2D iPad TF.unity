@@ -2673,7 +2673,7 @@ MonoBehaviour:
   playerRb: {fileID: 806586589}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!54 &806586589 stripped
 Rigidbody:
   m_PrefabParentObject: {fileID: 5458356, guid: 500b0d3dd10d64577989093225174de6,
