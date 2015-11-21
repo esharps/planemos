@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 7
   AndroidProfiler: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
+  targetDevice: 0
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60

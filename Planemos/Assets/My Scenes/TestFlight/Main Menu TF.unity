@@ -184,6 +184,14 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 747755869}
+    - target: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_Text
+      value: "PLANEMOS  \nTest Build v1.0\nReleased on 11/22/15\nProperty of NCSU
+        SD Team 17\n----------------------------\n\nThe following is a linear game
+        tutorial that will guide you through the basic gameplay mechanics and control
+        schemes we intend to implement in the full-version game. \n\nPlease press
+        the NEXT button in the bottom right ... \n"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
   m_IsPrefabParent: 0
