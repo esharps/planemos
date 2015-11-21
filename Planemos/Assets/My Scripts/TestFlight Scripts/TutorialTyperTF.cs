@@ -47,13 +47,22 @@ public class TutorialTyperTF : MonoBehaviour {
 		if (TutorialManagerTF.GAME_STATE == 0) {
 			yield return new WaitForSeconds (1.0f);
 			TutorialManagerTF.GAME_STATE = 1;
-		} else {
+		}
+		//if(TutorialManagerTF.GAME_STATE == 4) {
+		//	yield return new WaitForSeconds(1.0f);
+		//}
+		if(TutorialTDManagerTF.GAME_STATE == 5) {
+				yield return new WaitForSeconds(1.5f);
+		}
+		 else {
 			yield return new WaitForSeconds (1.0f);
 		}
 
 
 		//Text has been fully loaded into console
 		textFinishLoading = 1;
+		Debug.Log ("TEXT FINISHED LOADING------");
 	}
-	
+
+
 }

@@ -15,8 +15,8 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log ("PLAYER: " + playerScore);
-		Debug.Log ("ENEMY: " + enemyScore); 
+		//Debug.Log ("PLAYER: " + playerScore);
+		//Debug.Log ("ENEMY: " + enemyScore); 
 	}
 
 	public int GetPlayerScore () {

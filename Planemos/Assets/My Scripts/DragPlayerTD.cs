@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class DragPlayerTD : MonoBehaviour {
-
-
+	
 
 	public Rigidbody playerRb;
 	public LayerMask layerMask;
@@ -38,6 +37,8 @@ public class DragPlayerTD : MonoBehaviour {
 		}
 		
 		StartCoroutine("DragPlayerObj", hit);
+
+
 	}
 	
 	
