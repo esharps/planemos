@@ -7,17 +7,23 @@ public class TutorialTDManagerTF : MonoBehaviour {
 	
 	//Separate Camera for UI rendering
 	public GameObject uiCamera;
-	
+	public GameObject lowerConsole;
+	public GameObject mainConsole;
 	//UI Elements
-	public GameObject gravObjSingle;
+	public GameObject planemoObj;
 	public GameObject gravObjects;
+	public GameObject quitButton;
 
 	public GameObject nextButton;
 	//public GameObject prevButton;
 	public GameObject tdPage1Text;
 	public GameObject tdPage2Text;
-	//public GameObject tdPage3Text;
+	public GameObject tdPage3Text;
+	public GameObject tdPage4Text;
+	public GameObject tdPage5Text;
+	public GameObject tdPage6Text;
 	public GameObject tdSuccessText;
+	public GameObject finalMessage;
 
 	public GameObject gameBall;
 	
@@ -39,9 +45,20 @@ public class TutorialTDManagerTF : MonoBehaviour {
 		case 5:
 			runState5 ();
 			break;
-		
 		case 6:
 			runState6 ();
+			break;
+		case 7:
+			runState7 ();
+			break;
+		case 8:
+			runState8 ();
+			break;
+		case 9:
+			runState9 ();
+			break;
+		case 10:
+			runState10 ();
 			break;
 		}
 		
@@ -51,6 +68,7 @@ public class TutorialTDManagerTF : MonoBehaviour {
 	public void runState4() {
 
 		uiCamera.SetActive (true);
+		quitButton.SetActive (true);
 		tdPage1Text.SetActive (true);
 
 		// Once text has finished loading, wait for player to move paddle
@@ -64,12 +82,14 @@ public class TutorialTDManagerTF : MonoBehaviour {
 		}
 	}
 
+	// In GAMES_STATE 5, game organizes a typical pong match minus space objects
 	public void runState5() {
 
-		if (ScoreManager.playerScore != 5) {
+		if (ScoreManager.playerScore != 1) {
 
 			tdSuccessText.SetActive (false);
 			nextButton.SetActive (false);
+
 			//"Let's play a quick game against the AI"
 			tdPage2Text.SetActive (true);
 		}
@@ -79,87 +99,99 @@ public class TutorialTDManagerTF : MonoBehaviour {
 			gameBall.SetActive(true);
 		}
 
+		// Score == 5
 		if (ScoreManager.playerScore == 5) {
 
 			//End the game
-			gameBall.SetActive(false);
+			gameBall.SetActive (false);
 			tdPage2Text.SetActive(false);
 			tdSuccessText.SetActive(true);
 			nextButton.SetActive(true);
 		}
 	}
 
+	// In GAME_STATE 6, player is introduced to planemos
 	public void runState6() {
 
+		tdSuccessText.SetActive (false);
+		tdPage3Text.SetActive(true);
+		nextButton.SetActive(false);
+		tdPage4Text.SetActive (false);
 
-
-	}
-	
-	// In GAME_STATE 0, game runs AUTOMATED subroutine that simulates
-	// running the tutorial as a program
-	// GAME_STATE is changed to 1 by AutoTypeTF class through coroutine
-	// (i.e.) state change is NOT driven by user
-	/*public void runState0() {
-		
-		// Always active game objects in scene
-		uiCamera.SetActive (true);
-		quitButton.SetActive (true);
-		
-		// Active game objects in state 0
-		loginText.SetActive (true);
-		
-		// Disabled objects in state 0
-		nextButton.SetActive (false);
-		prevButton.SetActive (false);
-		playButton.SetActive (false);
-		menuPage1Text.SetActive (false);
-		menuPage2Text.SetActive (false);
-		menuPage3Text.SetActive (false);
-		
-	}
-	
-	// In GAME_STATE 1, the tutorial prints first page of text
-	// GAME_STATE is changed to 2 by user clicking NEXT button
-	public void runState1() {
-		
-		menuPage1Text.SetActive (true);
-		
-		loginText.SetActive (false);
-		prevButton.SetActive (false);
-		playButton.SetActive (false);
-		menuPage2Text.SetActive (false);
-		
 		if (TutorialTyperTF.textFinishLoading == 1) {
-			nextButton.SetActive (true);
+			planemoObj.SetActive(true);
+		}
+
+		nextButton.SetActive (true);
+
+	}
+
+	// GAME_STATE 7, player plays a match against AI with Earth planemo active
+	public void runState7() {
+
+		tdPage3Text.SetActive (false);
+		tdPage4Text.SetActive (true);
+
+		if (TutorialTyperTF.textFinishLoading == 1) {
+
+			gameBall.SetActive(true);
+
+		}
+
+		// Score = 10
+		if (ScoreManager.playerScore == 10) {
+
+			gameBall.SetActive(false);
+			tdPage4Text.SetActive(false);
+			tdSuccessText.SetActive(true);
+			nextButton.SetActive(true);
 		}
 	}
-	
-	// IN GAME_STATE 2, tutorial prints second page of text
-	// GAME_STATE changed to 3 by user clicking NEXT button
-	// GAME_STAE changed to 1 by user clicking PREV button
-	public void runState2() {
-		
-		menuPage2Text.SetActive (true);
-		
-		prevButton.SetActive (false);
+
+	// GAME_STATE 8, player is introduced to all gravitational objects
+	public void runState8 () {
+
+		tdPage4Text.SetActive (false);
+		tdSuccessText.SetActive (false);
+		tdPage5Text.SetActive (true);
 		nextButton.SetActive (false);
-		loginText.SetActive (false);
-		playButton.SetActive (false);
-		menuPage1Text.SetActive (false);
-		menuPage3Text.SetActive (false);
-		
+		//planemoObj.SetActive (false);
+
 		if (TutorialTyperTF.textFinishLoading == 1) {
-			nextButton.SetActive (true);
-			prevButton.SetActive (true);
+			gravObjects.SetActive (true);
 		}
-		
+
+		nextButton.SetActive (true);
 	}
 
-		
-	}*/
-	
-	public IEnumerator DelayLoad() {
-		yield return new WaitForSeconds(1.0f);
+
+	public void runState9() {
+		nextButton.SetActive (false);
+		tdPage5Text.SetActive (false);
+		tdPage6Text.SetActive (true);
+
+		if (TutorialTyperTF.textFinishLoading == 1) {
+			gameBall.SetActive(true);
+		}
+
+		// <= 18
+		if (ScoreManager.playerScore >= 18) {
+
+			tdPage6Text.SetActive(false);
+			tdSuccessText.SetActive (true);
+			nextButton.SetActive (true);
+		}
+
 	}
+
+	public void runState10() {
+		nextButton.SetActive (false);
+		lowerConsole.SetActive (false);
+		mainConsole.SetActive (true);
+		finalMessage.SetActive (true);
+
+	}
+
+
 
 }

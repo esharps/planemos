@@ -34,6 +34,10 @@ public class UniversalBallController : MonoBehaviour {
 		}
 
 		rb.constraints = RigidbodyConstraints.FreezeAll;
+
+		ScoreManager.playerScore = 0; //Emily
+		ScoreManager.enemyScore = 0; //Emily
+
 	}
 
 	void FixedUpdate(){

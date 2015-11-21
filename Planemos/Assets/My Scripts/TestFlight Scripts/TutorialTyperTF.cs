@@ -54,6 +54,10 @@ public class TutorialTyperTF : MonoBehaviour {
 		if(TutorialTDManagerTF.GAME_STATE == 5) {
 				yield return new WaitForSeconds(1.5f);
 		}
+		if (TutorialTDManagerTF.GAME_STATE == 6) {
+			yield return new WaitForSeconds(2.0f);
+
+		}
 		 else {
 			yield return new WaitForSeconds (1.0f);
 		}

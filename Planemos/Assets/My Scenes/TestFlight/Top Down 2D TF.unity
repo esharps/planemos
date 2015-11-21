@@ -169,7 +169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &114061628 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: e995a0325c0e3604285e7153f616b722, type: 3}
@@ -401,6 +401,97 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 166606204}
+--- !u!1 &178335695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114770, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 178335696}
+  - 222: {fileID: 178335699}
+  - 114: {fileID: 178335698}
+  - 114: {fileID: 178335697}
+  m_Layer: 5
+  m_Name: TDTextPage5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &178335696
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22474674, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178335695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1479362099}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 4.000103, y: -3.81469727e-06}
+  m_SizeDelta: {x: 1083, y: 142}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &178335697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11401364, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab8a319dff2844c48df497bf125074b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPause: .00899999961
+  startSound: {fileID: 0}
+--- !u!114 &178335698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178335695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .0981293172, g: .889705896, b: .201853245, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8e03d19652a8740f88654dd97f955f46, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Now let''s add some asteroids to our game. You will notice that all objects
+    have a slight gravitational field, which perturbs the trajectory of the ball. '
+--- !u!222 &178335699
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241062, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 178335695}
 --- !u!1001 &184986414
 Prefab:
   m_ObjectHideFlags: 0
@@ -438,7 +529,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6ccefb29d29d3064f99c9966ca19eef4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6ccefb29d29d3064f99c9966ca19eef4, type: 3}
       propertyPath: m_LocalScale.z
@@ -688,6 +779,100 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261423239}
+--- !u!1 &294074715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114770, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 294074716}
+  - 222: {fileID: 294074719}
+  - 114: {fileID: 294074718}
+  - 114: {fileID: 294074717}
+  m_Layer: 5
+  m_Name: FinalMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &294074716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22474674, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294074715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668975011}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -13, y: -10.3950043}
+  m_SizeDelta: {x: 1011, y: 444}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &294074717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11401364, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294074715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab8a319dff2844c48df497bf125074b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPause: .00899999961
+  startSound: {fileID: 0}
+--- !u!114 &294074718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294074715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .0981293172, g: .889705896, b: .201853245, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8e03d19652a8740f88654dd97f955f46, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "This concludes the end of our initial build. We hope you have enjoyed it
+    thus far. \n\nPress the QUIT button in the lower left-hand corner to exit, and
+    please feel free to leave us ANY feedback you might have after completing the
+    2D tutorial. An updated build of Planemos will be deployed soon containing all
+    new content.\n\nThanks for your valuable time!\n- Emily, Samantha, and Jon"
+--- !u!222 &294074719
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241062, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 294074715}
 --- !u!1001 &318384867
 Prefab:
   m_ObjectHideFlags: 0
@@ -816,7 +1001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'STELLAR  JOB! '
+  m_Text: "STELLAR  JOB! \n\nWhen ready, click NEXT"
 --- !u!222 &341053817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2099,6 +2284,168 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2014511531}
   m_RootOrder: 0
+--- !u!1 &586492122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114770, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 586492123}
+  - 222: {fileID: 586492126}
+  - 114: {fileID: 586492125}
+  - 114: {fileID: 586492124}
+  m_Layer: 5
+  m_Name: TDTextPage6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &586492123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22474674, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586492122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1479362099}
+  m_RootOrder: 6
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 4.000103, y: -3.81469727e-06}
+  m_SizeDelta: {x: 1083, y: 142}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &586492124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11401364, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586492122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab8a319dff2844c48df497bf125074b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  letterPause: .00899999961
+  startSound: {fileID: 0}
+--- !u!114 &586492125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586492122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .0981293172, g: .889705896, b: .201853245, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8e03d19652a8740f88654dd97f955f46, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Now try to score 8 points against the AI with the planemo and asteroid
+    objects in play. Enjoy the challenge! '
+--- !u!222 &586492126
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22241062, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 586492122}
+--- !u!1 &668975010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 132678, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 668975011}
+  - 222: {fileID: 668975013}
+  - 114: {fileID: 668975012}
+  m_Layer: 5
+  m_Name: CenterConsole
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &668975011
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22400096, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668975010}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 294074716}
+  m_Father: {fileID: 1403499132}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 2.60499573}
+  m_SizeDelta: {x: 1115, y: 464.790009}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &668975012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11449294, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668975010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 55525e5804ca944cd9273277c30d2dfd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &668975013
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22208164, guid: 892cd3219a6274b0593fc214c7e113e4,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668975010}
 --- !u!1001 &681958784
 Prefab:
   m_ObjectHideFlags: 0
@@ -2140,7 +2487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9192a677e87415f48b677ebfe4c023f0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9192a677e87415f48b677ebfe4c023f0, type: 3}
       propertyPath: m_LocalScale.y
@@ -2198,7 +2545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapConstraints: {fileID: 1004813292}
   rotationalVelocity: 3
-  speed: 3
+  speed: 5
 --- !u!4 &723143918 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9192a677e87415f48b677ebfe4c023f0, type: 3}
@@ -2418,7 +2765,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1 &916503293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,7 +2935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1023663483
 Transform:
   m_ObjectHideFlags: 0
@@ -2596,11 +2943,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1023663482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.51000023, y: 0, z: -7.88999987}
+  m_LocalPosition: {x: 9.51000023, y: 0, z: -7.88999939}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
-  m_Father: {fileID: 1154198080}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!114 &1023663484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2628,7 +2975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapConstraints: {fileID: 1004813292}
   rotationalVelocity: 1
-  speed: 1
+  speed: 3
 --- !u!23 &1023663486
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2954,13 +3301,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1023663483}
   - {fileID: 723143918}
   - {fileID: 114061629}
   - {fileID: 728764517}
   - {fileID: 1486979292}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!114 &1245883062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,8 +3434,9 @@ RectTransform:
   - {fileID: 2050440134}
   - {fileID: 166606205}
   - {fileID: 1024307722}
+  - {fileID: 668975011}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3323,8 +3670,9 @@ RectTransform:
   - {fileID: 916503294}
   - {fileID: 341053814}
   - {fileID: 1695483589}
-  - {fileID: 2143460570}
   - {fileID: 1640508942}
+  - {fileID: 178335696}
+  - {fileID: 586492123}
   m_Father: {fileID: 1403499132}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
@@ -3396,7 +3744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1154198080}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!65 &1486979293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3485,7 +3833,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: e995a0325c0e3604285e7153f616b722, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e995a0325c0e3604285e7153f616b722, type: 3}
       propertyPath: m_IsActive
@@ -3534,7 +3882,7 @@ GameObject:
   - 114: {fileID: 1640508944}
   - 114: {fileID: 1640508943}
   m_Layer: 5
-  m_Name: TDTextPage5
+  m_Name: TDTextPage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3552,7 +3900,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479362099}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 4.000103, y: -3.81469727e-06}
@@ -3604,7 +3952,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try to score 8 points against the AI with the Earth planemo in play.
+  m_Text: Now try to score 5 points against the AI with the Earth PLANEMO in play.
 --- !u!222 &1640508945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3727,7 +4075,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Let's make things more difficult and add a PLANEMO to our game.
+  m_Text: 'Let''s make things more difficult and add a PLANEMO.
+
+
+    PLANEMOS are objects in space such as planets that have achieved hydrostatic equilibrium
+    (i.e. they''re round because of gravity), but they do not experience fusion reactions
+    as do stars.'
 --- !u!222 &1695483592
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3768,7 +4121,7 @@ RectTransform:
   - {fileID: 158671871}
   - {fileID: 379149492}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3928,12 +4281,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCamera: {fileID: 921601480}
-  gravObjSingle: {fileID: 1023663482}
+  lowerConsole: {fileID: 1479362098}
+  mainConsole: {fileID: 668975010}
+  planemoObj: {fileID: 1023663482}
   gravObjects: {fileID: 1154198079}
+  quitButton: {fileID: 261423239}
   nextButton: {fileID: 2050440133}
   tdPage1Text: {fileID: 221585597}
   tdPage2Text: {fileID: 916503293}
+  tdPage3Text: {fileID: 1695483588}
+  tdPage4Text: {fileID: 1640508941}
+  tdPage5Text: {fileID: 178335695}
+  tdPage6Text: {fileID: 586492122}
   tdSuccessText: {fileID: 341053813}
+  finalMessage: {fileID: 294074715}
   gameBall: {fileID: 1809127395}
 --- !u!4 &1877896619
 Transform:
@@ -4497,99 +4858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
---- !u!1 &2143460569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114770, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 2143460570}
-  - 222: {fileID: 2143460573}
-  - 114: {fileID: 2143460572}
-  - 114: {fileID: 2143460571}
-  m_Layer: 5
-  m_Name: TDTextPage4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2143460570
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22474674, guid: 892cd3219a6274b0593fc214c7e113e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143460569}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1479362099}
-  m_RootOrder: 4
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 4.00009537, y: -3.81469727e-06}
-  m_SizeDelta: {x: 1083, y: 142}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &2143460571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11401364, guid: 892cd3219a6274b0593fc214c7e113e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143460569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab8a319dff2844c48df497bf125074b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterPause: .00899999961
-  startSound: {fileID: 0}
---- !u!114 &2143460572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143460569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .0981293172, g: .889705896, b: .201853245, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 8e03d19652a8740f88654dd97f955f46, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: PLANEMOS are space objects such as planets that have achieved hydrostatic
-    equilibrium (i.e. they're round because of gravity), but do not experience  light-generating
-    fusion reactions like our sun and other stars.
---- !u!222 &2143460573
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 22241062, guid: 892cd3219a6274b0593fc214c7e113e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2143460569}
+  m_RootOrder: 13
 --- !u!1001 &2144147301
 Prefab:
   m_ObjectHideFlags: 0
