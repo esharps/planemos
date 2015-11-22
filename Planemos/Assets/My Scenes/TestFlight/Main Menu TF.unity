@@ -187,10 +187,60 @@ Prefab:
     - target: {fileID: 11488708, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
       propertyPath: m_Text
       value: "PLANEMOS  \nTest Build v1.0\nReleased on 11/22/15\nProperty of NCSU
-        SD Team 17\n----------------------------\n\nThe following is a linear game
-        tutorial that will guide you through the basic gameplay mechanics and control
-        schemes we intend to implement in the full-version game. \n\nPlease press
-        the NEXT button in the bottom right ... \n"
+        SD Team 17\n----------------------------\n\nThe following is a simple tutorial
+        that will guide you through the basic gameplay mechanics and control schemes
+        we intend to implement in the full version of Planemos. \n\nPlease press the
+        NEXT button in the bottom right ... "
+      objectReference: {fileID: 0}
+    - target: {fileID: 11471280, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_Text
+      value: "As external playtesters, it is your job to report any \nbugs or issues
+        you may find as you play our game. \n\nWe want your opinions on everything,
+        from gameplay difficulty and controls to artwork and color schemes. Whether
+        positive, negative or netural, all of your feedback is extremely valuable.\n\nComments,
+        concerns or trepidations can be directly submitted through the TestFlight
+        application or you may contact us directly at emmysharp@gmail.com\n\nPress
+        NEXT ...\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 176268, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22423418, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.00013351
+      objectReference: {fileID: 0}
+    - target: {fileID: 22423418, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.2499962
+      objectReference: {fileID: 0}
+    - target: {fileID: 22423418, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 478.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 107214, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485864, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: m_Text
+      value: "As we receive your feedback and perform our own internal testing, we
+        plan to regularly update our app with bug fixes along with exciting new game
+        content. The updated versions will be automatically delivered to you through
+        TestFlight. \n\nThank you for time and interest in our academic labor of love.
+        \n\nHappy Gaming! \n- Emily, Samantha & Jon"
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483178, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: letterPause
+      value: .00700000022
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474638, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: letterPause
+      value: .00700000022
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401364, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}
+      propertyPath: letterPause
+      value: .00700000022
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 892cd3219a6274b0593fc214c7e113e4, type: 2}

@@ -85,7 +85,9 @@ public class TutorialTDManagerTF : MonoBehaviour {
 	// In GAMES_STATE 5, game organizes a typical pong match minus space objects
 	public void runState5() {
 
-		if (ScoreManager.playerScore != 1) {
+
+
+		if (ScoreManager.playerScore != 5) {
 
 			tdSuccessText.SetActive (false);
 			nextButton.SetActive (false);
@@ -95,11 +97,10 @@ public class TutorialTDManagerTF : MonoBehaviour {
 		}
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
-
 			gameBall.SetActive(true);
 		}
 
-		// Score == 5
+		// Player has scored 5 points 
 		if (ScoreManager.playerScore == 5) {
 
 			//End the game
@@ -119,23 +120,26 @@ public class TutorialTDManagerTF : MonoBehaviour {
 		tdPage4Text.SetActive (false);
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
+			nextButton.SetActive (true);
 			planemoObj.SetActive(true);
 		}
 
-		nextButton.SetActive (true);
+
+
+
 
 	}
 
 	// GAME_STATE 7, player plays a match against AI with Earth planemo active
+	// Player score must be 10 to exit to next state
 	public void runState7() {
 
 		tdPage3Text.SetActive (false);
 		tdPage4Text.SetActive (true);
+		nextButton.SetActive (false);
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
-
 			gameBall.SetActive(true);
-
 		}
 
 		// Score = 10
@@ -151,21 +155,26 @@ public class TutorialTDManagerTF : MonoBehaviour {
 	// GAME_STATE 8, player is introduced to all gravitational objects
 	public void runState8 () {
 
+		nextButton.SetActive (false);
 		tdPage4Text.SetActive (false);
 		tdSuccessText.SetActive (false);
 		tdPage5Text.SetActive (true);
-		nextButton.SetActive (false);
+
 		//planemoObj.SetActive (false);
 
 		if (TutorialTyperTF.textFinishLoading == 1) {
+			nextButton.SetActive (true);
 			gravObjects.SetActive (true);
 		}
 
-		nextButton.SetActive (true);
+
 	}
 
 
 	public void runState9() {
+
+		gravObjects.SetActive (true);
+		planemoObj.SetActive(true);
 		nextButton.SetActive (false);
 		tdPage5Text.SetActive (false);
 		tdPage6Text.SetActive (true);

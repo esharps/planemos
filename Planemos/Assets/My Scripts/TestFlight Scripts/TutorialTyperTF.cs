@@ -65,7 +65,6 @@ public class TutorialTyperTF : MonoBehaviour {
 
 		//Text has been fully loaded into console
 		textFinishLoading = 1;
-		Debug.Log ("TEXT FINISHED LOADING------");
 	}
 
 
