@@ -1,0 +1,33 @@
+Name: 		hologram_turn_on
+Original:	elevator-button-press-2
+Artist:		mredig
+License: 	Attribution
+		http://creativecommons.org/licenses/by/3.0/
+
+Name:		menu_option_selection
+Original:	blip10
+Artist:		Corsica_S
+License: 	Attribution
+		http://creativecommons.org/licenses/by/3.0/
+		Modified
+
+Name:		menu_option_rotation_clink
+Original:	blip10
+Artist:		Corsica_S
+License: 	Attribution
+		http://creativecommons.org/licenses/by/3.0/
+		Modified
+
+Name:		menu_option_back
+Original:	blip10
+Artist:		Corsica_S
+License: 	Attribution
+		http://creativecommons.org/licenses/by/3.0/
+		Modified
+
+Name:		play
+Original:	electronic-beeps
+Artist:		bluebloomers
+License: 	Attribution
+		http://creativecommons.org/licenses/by/3.0/
+		Modified
