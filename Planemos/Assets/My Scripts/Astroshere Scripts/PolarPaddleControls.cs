@@ -14,6 +14,6 @@ public class PolarPaddleControls : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float deltaAngle = Input.GetAxis ("Horizontal") * paddleSpeed;
-		polarCalc.UpdatePosition (deltaAngle);
+		polarCalc.Move (deltaAngle);
 	}
 }

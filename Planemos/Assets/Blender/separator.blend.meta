@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3a375dbb59fe54be3a6b586edc78e87f
-timeCreated: 1443659831
+guid: 652c6118431213040913d374b751e46e
+timeCreated: 1448251951
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,8 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere
+    4300000: Cube
+    4300002: Separator
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -25,7 +26,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -55,7 +56,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
