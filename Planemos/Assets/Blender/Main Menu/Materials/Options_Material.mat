@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Metal
-  m_Shader: {fileID: 4800000, guid: 7682ab5e936afcb469d7fef4d5adf6eb, type: 3}
+  m_Name: Options_Material
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -130,7 +130,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .949999988
+        second: .769999981
       data:
         first:
           name: _BumpScale
@@ -154,7 +154,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .579999983
+        second: .479999989
       data:
         first:
           name: _RimPower01
@@ -195,15 +195,15 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .0882353187, g: .0862889513, b: .0862889513, a: 1}
+        second: {r: .162900075, g: .201536819, b: .963235319, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .264705896, g: .482758611, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: .941176474, g: .941176474, b: .941176474, a: 1}
       data:
         first:
           name: _RimColor
