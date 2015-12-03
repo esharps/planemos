@@ -4,13 +4,20 @@ using System.Collections;
 public class TutorialManagerTF : MonoBehaviour {
 
 	public static int GAME_STATE;
+
+	//Separate Camera for UI rendering
 	public GameObject uiCamera;
+
+	//UI Elements
 	public GameObject quitButton;
 	public GameObject nextButton;
 	public GameObject prevButton;
+	public GameObject playButton;
 	public GameObject loginText;
 	public GameObject menuPage1Text;
 	public GameObject menuPage2Text;
+	public GameObject menuPage3Text;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +32,11 @@ public class TutorialManagerTF : MonoBehaviour {
 			runState0();
 		} 
 
+
+		nextButton.SetActive (false);
+		prevButton.SetActive (false);
+		playButton.SetActive (false);
+	
 		switch (GAME_STATE) 
 		{
 			case 1:
@@ -34,8 +46,9 @@ public class TutorialManagerTF : MonoBehaviour {
 			case 2:
 				runState2();
 				break;
-
-				
+			case 3:
+				runState3();
+				break;
 
 
 		}
@@ -59,8 +72,10 @@ public class TutorialManagerTF : MonoBehaviour {
 		// Disabled objects in state 0
 		nextButton.SetActive (false);
 		prevButton.SetActive (false);
+		playButton.SetActive (false);
 		menuPage1Text.SetActive (false);
 		menuPage2Text.SetActive (false);
+		menuPage3Text.SetActive (false);
 
 	}
 
@@ -68,12 +83,16 @@ public class TutorialManagerTF : MonoBehaviour {
 	// GAME_STATE is changed to 2 by user clicking NEXT button
 	public void runState1() {
 
-		nextButton.SetActive (true);
 		menuPage1Text.SetActive (true);
 
 		loginText.SetActive (false);
 		prevButton.SetActive (false);
+		playButton.SetActive (false);
 		menuPage2Text.SetActive (false);
+
+		if (TutorialTyperTF.textFinishLoading == 1) {
+			nextButton.SetActive (true);
+		}
 	}
 
 	// IN GAME_STATE 2, tutorial prints second page of text
@@ -81,13 +100,40 @@ public class TutorialManagerTF : MonoBehaviour {
 	// GAME_STAE changed to 1 by user clicking PREV button
 	public void runState2() {
 
-		nextButton.SetActive (true);
-		prevButton.SetActive (true);
 		menuPage2Text.SetActive (true);
-		
+
+		prevButton.SetActive (false);
+		nextButton.SetActive (false);
 		loginText.SetActive (false);
+		playButton.SetActive (false);
 		menuPage1Text.SetActive (false);
-	
+		menuPage3Text.SetActive (false);
+
+		if (TutorialTyperTF.textFinishLoading == 1) {
+			nextButton.SetActive (true);
+			prevButton.SetActive (true);
+		}
+
+	}
+
+	// IN GAME_STATE 3, tutorial prints final page of text 
+	// GAME_STATE changed to 4 by user clicking PLAY GAME 
+
+	public void runState3() {
+
+		menuPage3Text.SetActive (true);
+
+		prevButton.SetActive (false);
+		loginText.SetActive (false);
+		nextButton.SetActive (false);
+		menuPage1Text.SetActive (false);
+		menuPage2Text.SetActive (false);
+		playButton.SetActive (false);
+		if (TutorialTyperTF.textFinishLoading == 1) {
+			playButton.SetActive (false);
+			prevButton.SetActive (true);
+			playButton.SetActive (true);
+		}
 
 	}
 

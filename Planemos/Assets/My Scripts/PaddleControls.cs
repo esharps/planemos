@@ -10,6 +10,7 @@ public class PaddleControls : MonoBehaviour {
 	private Vector3 targetPos;
 	private Vector3 lastMousePos;
 	private Rigidbody thisRb;
+	public static float paddleY = 0;
 
 
 	void Start(){
@@ -30,6 +31,9 @@ public class PaddleControls : MonoBehaviour {
 		//		transform.position = playerPos;
 		#endif
 
+
+		paddleY = transform.position.x;
+		//Debug.Log (paddleY);
 //		float distance_to_screen = Camera.main.WorldToScreenPoint (transform.position).z;
 //		Vector3 pos_move = Camera.main.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
 //		playerPos = new Vector3 (xPos, yPos, transform.position.z);

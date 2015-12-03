@@ -29,4 +29,8 @@ public class ButtonManagerTF : MonoBehaviour {
 		// In tutorial, top-down section at index 1 in build
 		Application.LoadLevel (1);
 	}
+
+	public void PressNextTD() {
+		TutorialTDManagerTF.GAME_STATE += 1;
+	}
 }

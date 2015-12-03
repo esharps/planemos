@@ -15,7 +15,9 @@ public class ScoreSensor : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c){
 		if (c.gameObject.CompareTag ("Ball")) {
-			score++;
+
+
+			Debug.Log ("Someone Scored");
 			scoreText.text = score.ToString ();
 			bc.resetBall ();
 		}

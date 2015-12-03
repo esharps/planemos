@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class DragPlayerTD : MonoBehaviour {
+	
 
-
-
-
+	public Rigidbody playerRb;
+	public LayerMask layerMask;
 
 	private void Update()
 	{
@@ -16,23 +16,29 @@ public class DragPlayerTD : MonoBehaviour {
 		}
 		
 		var mainCamera = FindCamera();
-		
 		// We need to actually hit an object
-		RaycastHit hit = new RaycastHit();
+//		var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+//		playerRb.MovePosition(new Vector3(ray.GetPoint(hit.distance).x, transform.position.y, transform.position.z));
+//		
+
+		RaycastHit hit = new RaycastHit( );
+
 		if (
 			!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition).origin,
 		                 mainCamera.ScreenPointToRay(Input.mousePosition).direction, out hit, 100,
-		                 Physics.DefaultRaycastLayers))
+		                 layerMask))
 		{
 			return;
 		}
 		// We need to hit a rigidbody that is not kinematic
-		if (!hit.rigidbody || hit.rigidbody.isKinematic || hit.transform.gameObject.tag != "Player")
+		if (!hit.rigidbody || hit.rigidbody.isKinematic || !hit.transform.gameObject.CompareTag("Player"))
 		{
 			return;
 		}
 		
 		StartCoroutine("DragPlayerObj", hit);
+
+
 	}
 	
 	

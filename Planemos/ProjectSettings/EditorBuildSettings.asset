@@ -6,8 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/My Scenes/Testing Menu.unity
+    path: Assets/My Scenes/TestFlight/Main Menu TF.unity
   - enabled: 1
-    path: Assets/My Scenes/ContinuumTD.unity
-  - enabled: 1
-    path: Assets/My Scenes/Continuum.unity
+    path: Assets/My Scenes/TestFlight/Top Down 2D TF.unity

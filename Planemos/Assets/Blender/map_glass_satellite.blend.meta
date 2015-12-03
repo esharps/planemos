@@ -62,6 +62,7 @@ ModelImporter:
     100108: Main_Rail_Q4_010
     100110: Main_Rail_Q4_011
     100112: Main_Rail_Q4_012
+    100114: Main_Rail
     400000: //RootNode
     400002: Sphere
     400004: Torus
@@ -119,6 +120,7 @@ ModelImporter:
     400108: Main_Rail_Q4_010
     400110: Main_Rail_Q4_011
     400112: Main_Rail_Q4_012
+    400114: Main_Rail
     2300000: Sphere
     2300002: Torus
     2300004: Torus_001
@@ -175,6 +177,7 @@ ModelImporter:
     2300106: Main_Rail_Q4_010
     2300108: Main_Rail_Q4_011
     2300110: Main_Rail_Q4_012
+    2300112: Main_Rail
     3300000: Sphere
     3300002: Torus
     3300004: Torus_001
@@ -231,6 +234,7 @@ ModelImporter:
     3300106: Main_Rail_Q4_010
     3300108: Main_Rail_Q4_011
     3300110: Main_Rail_Q4_012
+    3300112: Main_Rail
     4300000: Torus_001
     4300002: Sphere
     4300004: Torus
@@ -287,6 +291,7 @@ ModelImporter:
     4300106: Main_Rail_Q4_003
     4300108: Main_Rail_Q4_002
     4300110: Main_Rail_Q4_001
+    4300112: Main_Rail
     7400000: Default Take
     9500000: //RootNode
   materials:

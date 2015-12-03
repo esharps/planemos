@@ -8,9 +8,9 @@ public class AstroBallController : MonoBehaviour {
 	public Vector3 startPos;
 	public Vector3 eulerAngleVelocity;
 	
-	private Rigidbody rb;
-	private bool ballInPlay = false;
-	private int volleyCount = 0;
+	Rigidbody rb;
+	bool ballInPlay = false;
+	int volleyCount = 0;
 
 	void Start(){
 	
@@ -38,13 +38,6 @@ public class AstroBallController : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-
-//		Debug.Log (rb.velocity.magnitude);				
-	}
-
 	IEnumerator startBall(){
 		yield return new WaitForSeconds(delay);
 		randomlyRotate ();
@@ -68,17 +61,12 @@ public class AstroBallController : MonoBehaviour {
 		rb.velocity = dir;
 	}
 
-	void resetBall(){
+	public void resetBall(){
 		ballInPlay = false;
 		eulerAngleVelocity = Vector3.zero;
 		rb.velocity = Vector3.zero;
 		transform.position = startPos;
 		volleyCount = 0;
-	}
-	
-	public bool isMovingToward(Vector3 pos){
-		Vector3 ballToPos = pos - transform.position;
-		return Vector3.Dot(rb.velocity, ballToPos) > 0;
 	}
 	
 	void OnCollisionEnter( Collision coll ){

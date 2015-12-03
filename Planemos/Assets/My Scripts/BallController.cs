@@ -21,6 +21,7 @@ public class BallController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
 		thisRigidBody = GetComponent<Rigidbody> ();
 		if (!move3d) {
 			thisRigidBody.constraints = RigidbodyConstraints.FreezePositionY;

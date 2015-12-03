@@ -29,6 +29,10 @@ GameObject:
   - 64: {fileID: 6462220}
   - 114: {fileID: 11445168}
   - 54: {fileID: 5481028}
+  - 114: {fileID: 11400362}
+  - 114: {fileID: 11412284}
+  - 95: {fileID: 9538998}
+  - 114: {fileID: 11414982}
   m_Layer: 0
   m_Name: AstroEnemy
   m_TagString: Enemy
@@ -121,6 +125,23 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: f0aee9583229c455586da458e3356c52, type: 3}
+--- !u!95 &9538998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141550}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e76cf27ebfbb5a74d8109cb78c1b0daa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &10819342
 Light:
   m_ObjectHideFlags: 1
@@ -153,6 +174,40 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11400362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d830f854391c1408bad1588a24eb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11412284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bb8f09746255140ba3336d53cafd01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11414982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94feb64eea240048831c8c68f813ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  associatedSeparator: {fileID: 0}
 --- !u!114 &11445168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +222,7 @@ MonoBehaviour:
   startAngle: 0
   radius: 0
   movementRange: 0
-  hasRigidBody: 0
+  curAngle: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -194,6 +249,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

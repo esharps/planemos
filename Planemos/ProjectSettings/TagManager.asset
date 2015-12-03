@@ -10,6 +10,9 @@ TagManager:
   - Portal
   - 4:3 Preset
   - 16:9 Preset
+  - ScoreSensor
+  - EnemyScoring
+  - PlayerScoring
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Grav Objects
   - Grav Objext Bounds
-  - 
+  - Raycast Only
   - 
   - 
   - 
