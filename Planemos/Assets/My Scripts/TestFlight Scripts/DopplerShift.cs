@@ -2,6 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/**
+ * Collects points dynamically through a queue to calculate 
+ * velocity; the sign of the velocity determines whether the
+ * ball is moving toward the player (BLUE shift) or away from
+ * player (RED shift)
+ * */
 public class DopplerShift : MonoBehaviour {
 
 
