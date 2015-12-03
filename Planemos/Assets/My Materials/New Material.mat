@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New Material
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 7682ab5e936afcb469d7fef4d5adf6eb, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: TransparentCutout
   m_SavedProperties:
@@ -128,12 +128,32 @@ Material:
         first:
           name: _Metallic
         second: .703999996
+      data:
+        first:
+          name: _TintStrength
+        second: 1.23000002
+      data:
+        first:
+          name: _CoreStrength
+        second: .899999976
+      data:
+        first:
+          name: _CutOutLightCore
+        second: .5
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: .157331288, g: .345188558, b: .713235259, a: 1}
+        second: {r: .157331288, g: .713235259, b: .276179701, a: 1}
       data:
         first:
           name: _Color
         second: {r: .336072654, g: .438715488, b: .816176474, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: 0, g: .0958924666, b: .227941155, a: .5}
+      data:
+        first:
+          name: _CoreColor
+        second: {r: .5, g: .5, b: .5, a: .5}
