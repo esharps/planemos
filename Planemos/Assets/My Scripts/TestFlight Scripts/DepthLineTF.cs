@@ -3,15 +3,21 @@ using System.Collections;
 
 public class DepthLineTF : MonoBehaviour {
 
-	public static float zPosition;
+	Vector3 currLinePos;
+	public float xLinePos = 0;
+	public float yLinePos = -13;
+
+	//public static float zPosition;
 
 	// Use this for initialization
 	void Start () {
-		zPosition = transform.position.z;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (transform.position.z);
+
+		currLinePos = new Vector3 (xLinePos, yLinePos, BallPositionTrackerTF.ballPosZ);
+		transform.position = currLinePos;
 	}
 }
