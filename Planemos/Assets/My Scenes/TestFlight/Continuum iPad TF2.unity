@@ -4364,6 +4364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db199be35c414855b2a1e1eb717aab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLinePos: 0
+  yLinePos: -13
 --- !u!1 &633787519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 126406, guid: 0c8760dae5103674096e487460fa90db, type: 2}
@@ -6626,7 +6628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1502250753
 Transform:
   m_ObjectHideFlags: 0
