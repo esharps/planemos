@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void ReturnToMain(){
-		Application.LoadLevel("Testing Menu");
+		Application.LoadLevel("Main Menu");
 	}
 
 	public void Restart(){

@@ -38,6 +38,7 @@ public class DragPlayerTD : MonoBehaviour {
 		
 		StartCoroutine("DragPlayerObj", hit);
 
+		Debug.Log (transform.position.x);
 
 	}
 	
@@ -50,6 +51,9 @@ public class DragPlayerTD : MonoBehaviour {
 			var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 			hit.rigidbody.MovePosition(new Vector3(ray.GetPoint(hit.distance).x, transform.position.y, transform.position.z));
 			Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+
+			Debug.Log (transform.position.x);
+
 			yield return null;
 		}
 	}
