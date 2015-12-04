@@ -3,29 +3,32 @@ using System.Collections;
 
 public class MainMenuRotateTF : MonoBehaviour {
 
-    private bool started = true;//false;
 
-    // For when the player touches the menu
-    private float rotSpeed = 10.0f;
-    private float lerpSpeed = 1.0f;
+/******** Jon, to git rid of compiler warnings *********/
 
-    private Vector3 speed;
-    private Vector3 avgSpeed;
-
-    //private bool clicked = false;
-    private bool dragging = false;
-    //private float[] mousePos = new float[2];
-
-    public GameObject menuRotator;
-    //public Camera mainCam;
-
-    private bool rotateToRight = false;
-    private bool rotateToLeft = false;
-
-    void OnMouseDown()
-    {
-        dragging = true;       
-    }
+//    private bool started = true;//false;
+//
+//    // For when the player touches the menu
+//    private float rotSpeed = 10.0f;
+//    private float lerpSpeed = 1.0f;
+//
+//    private Vector3 speed;
+//    private Vector3 avgSpeed;
+//
+//    //private bool clicked = false;
+//    private bool dragging = false;
+//    //private float[] mousePos = new float[2];
+//
+//    public GameObject menuRotator;
+//    //public Camera mainCam;
+//
+//    private bool rotateToRight = false;
+//    private bool rotateToLeft = false;
+//
+//    void OnMouseDown()
+//    {
+//        dragging = true;       
+//    }
 
     void Update () {
 

@@ -4,14 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/My Scenes/Testing Menu.unity
-  - enabled: 1
-    path: Assets/My Scenes/ContinuumTD.unity
-  - enabled: 1
-    path: Assets/My Scenes/Continuum.unity
-=======
-    path: Assets/My Scenes/TestFlight/Top Down 2D TF.unity
->>>>>>> d15497df428f4de26f369f4b3b3ffc35607512f7
+  m_Scenes: []
