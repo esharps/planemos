@@ -18,7 +18,7 @@ public class MenuButton : MonoBehaviour {
 
     public void PlaySelected() {
         if (c.alpha >= 0.8)
-            Application.LoadLevel("Testing Menu");
+            Application.LoadLevel("GameplayMenu");
     }
 
     public void OptionsSelected() {
