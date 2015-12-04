@@ -11143,7 +11143,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 471442, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5468102, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1, type: 2}
       propertyPath: m_Mass
@@ -11200,10 +11200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd26990619de3448b119682d0618b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionEffect: {fileID: 0}
   mapConstraints: {fileID: 990300405}
   startSpeed: 20
   startDelay: 2
+  collisionEffect: {fileID: 100000, guid: ce8f9de7442c132419107f426d347a9f, type: 2}
 --- !u!114 &1827410832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11219,10 +11219,6 @@ MonoBehaviour:
 Rigidbody:
   m_PrefabParentObject: {fileID: 5468102, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1,
     type: 2}
-  m_PrefabInternal: {fileID: 1827410829}
---- !u!4 &1827410837 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 471442, guid: 1982d4e3d86b14469b7c2b7aba5dbbd1, type: 2}
   m_PrefabInternal: {fileID: 1827410829}
 --- !u!1 &1882983638 stripped
 GameObject:
@@ -11321,33 +11317,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1974160582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1974160583}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1974160583
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1974160582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1827410837}
-  m_RootOrder: 0
 --- !u!1 &2086132945 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 164234, guid: b5824707dc672fd4eb8e41b74f6fa7fc, type: 2}
