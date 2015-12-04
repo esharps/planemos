@@ -10,4 +10,8 @@ public class GameplaySelectMenu: MonoBehaviour {
 	public void FirstPersonSelected(){
 		Application.LoadLevel ("Continuum iPad TF2.1");
 	}
+
+	public void QuitSelected() {
+		Application.Quit ();
+	}
 }
