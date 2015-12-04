@@ -6,7 +6,7 @@ public class MainMenuRotate : MonoBehaviour {
     private bool started = true;//false;
 
     // For when the player touches the menu
-    private float rotSpeed = 10.0f;
+    private float rotSpeed = 0.2f;
     private float lerpSpeed = 1.0f;
 
     private Vector3 speed;
@@ -22,10 +22,10 @@ public class MainMenuRotate : MonoBehaviour {
     private bool rotateToRight = false;
     private bool rotateToLeft = false;
 
-    void OnMouseDown()
+    /*void OnMouseDown()
     {
         dragging = true;       
-    }
+    }*/
 
     void Update () {
 
@@ -35,18 +35,20 @@ public class MainMenuRotate : MonoBehaviour {
         if (started)
         {
             // Set the speed of rotation relative to the speed of mouse movement
-            if (Input.GetMouseButton(0) && dragging)
-            {
-                speed = new Vector3(Input.GetAxis("Mouse X"), 0.0f, 0.0f);
-                avgSpeed = Vector3.Lerp(avgSpeed, speed, Time.deltaTime * 5);
+            //if (Input.GetMouseButton(0) && dragging)
+			if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+			{
+                //speed = new Vector3(Input.GetAxis("Mouse X"), 0.0f, 0.0f);
+				speed = new Vector3(Input.GetTouch(0).deltaPosition.x, 0.0f, 0.0f);
+				avgSpeed = Vector3.Lerp(avgSpeed, speed, Time.deltaTime * 5);
+				dragging = true;
             }
             // Otherwise, slowly slow down rotation
-            else
+            else if (Input.GetTouch(0).phase == TouchPhase.Ended)
             {
                 if (dragging)
                 {
                     speed = avgSpeed;
-                    //idleTime = Time.time;
                     dragging = false;
                 }
                 float i = Time.deltaTime * lerpSpeed;
@@ -116,7 +118,7 @@ public class MainMenuRotate : MonoBehaviour {
                 }
             }
 
-            transform.Rotate(0.0f, -(speed.x * rotSpeed), 0.0f);
+            transform.Rotate(0.0f, -(speed.x *rotSpeed), 0.0f);
         }
 
     }
