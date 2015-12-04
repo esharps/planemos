@@ -3,9 +3,15 @@ using System.Collections;
 
 public class DragPlayerTD : MonoBehaviour {
 	
-
+	public MapContstraints mapConstraints;
 	public Rigidbody playerRb;
 	public LayerMask layerMask;
+
+	private float xRange;
+
+	private void Start(){
+		xRange = mapConstraints.xRange;
+	}
 
 	private void Update()
 	{
@@ -45,14 +51,13 @@ public class DragPlayerTD : MonoBehaviour {
 	
 	private IEnumerator DragPlayerObj(RaycastHit hit)
 	{
-		var mainCamera = FindCamera();
+		Camera mainCamera = FindCamera();
 		while (Input.GetMouseButton(0))
 		{
-			var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-			hit.rigidbody.MovePosition(new Vector3(ray.GetPoint(hit.distance).x, transform.position.y, transform.position.z));
+			Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			float x = Mathf.Clamp(ray.GetPoint(hit.distance).x, -xRange, xRange);
+			hit.rigidbody.MovePosition(new Vector3( x, transform.position.y, transform.position.z ));
 			Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-
-			Debug.Log (transform.position.x);
 
 			yield return null;
 		}

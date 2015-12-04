@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class DragPlayer : MonoBehaviour
 {
+	public MapContstraints  mapConstraints;
+	float                   xRange;
+	float                   yRange;
+
+	void Start(){
+		xRange = mapConstraints.xRange;
+		yRange = mapConstraints.yRange;
+	}
 
     private void Update()
     {
@@ -13,7 +21,7 @@ public class DragPlayer : MonoBehaviour
             return;
         }
 
-        var mainCamera = FindCamera();
+        Camera mainCamera = FindCamera();
 
         // We need to actually hit an object
         RaycastHit hit = new RaycastHit();
@@ -36,11 +44,14 @@ public class DragPlayer : MonoBehaviour
 
     private IEnumerator DragPlayerObj(RaycastHit hit)
     {
-        var mainCamera = FindCamera();
+        Camera mainCamera = FindCamera();
         while (Input.GetMouseButton(0))
         {
-            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            hit.rigidbody.MovePosition(new Vector3(ray.GetPoint(hit.distance).x, ray.GetPoint(hit.distance).y, transform.position.z));
+            Ray     ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+			float   x   = Mathf.Clamp ( ray.GetPoint(hit.distance).x, -xRange, xRange );
+			float   y   = Mathf.Clamp ( ray.GetPoint(hit.distance).y, -yRange, yRange );
+
+			hit.rigidbody.MovePosition(new Vector3(x, y, transform.position.z));
             yield return null;
         }
     }
