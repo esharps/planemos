@@ -17,7 +17,7 @@ public class ScoreSensor : MonoBehaviour {
 		if (c.gameObject.CompareTag ("Ball")) {
 
 
-			Debug.Log ("Someone Scored");
+//			Debug.Log ("Someone Scored");
 			scoreText.text = score.ToString ();
 			bc.resetBall ();
 		}

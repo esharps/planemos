@@ -61,7 +61,7 @@ public class PortalController: MonoBehaviour {
 
 	public void OnPortalTrigger(PortalType type, Component c, GameObject origin )
 	{
-		if (type == null || c == null) {
+		if ( c == null) {
 			return;
 		}
 

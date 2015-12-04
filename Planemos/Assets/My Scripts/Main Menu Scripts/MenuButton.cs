@@ -22,13 +22,15 @@ public class MenuButton : MonoBehaviour {
     }
 
     public void OptionsSelected() {
-        if (c.alpha >= 0.8)
-            ;
+		// Jon, to get rid of compiler warnings
+//        if (c.alpha >= 0.8)
+//            ;
     }
 
     public void CreditsSelected() {
-        if (c.alpha >= 0.8)
-            ;
+	// Jon, to get rid of compiler warnings
+//        if (c.alpha >= 0.8)
+//            ;
     }
 
     public void QuitSelected() {

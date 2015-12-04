@@ -6,7 +6,7 @@ public class CamRotator : MonoBehaviour
 
     private bool clicked = false;
     //private bool dragging = false;
-    private float[] mousePos = new float[2];
+//    private float[] mousePos = new float[2]; //Jon, to git rid of compiler warnings
 	private float detectTime = 0.0f;
     private bool toOptions = false;
 

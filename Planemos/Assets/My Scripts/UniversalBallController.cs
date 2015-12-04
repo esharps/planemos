@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UniversalBallController : MonoBehaviour {
 
 	
-//	public GameObject       collisionEffect;
+	public GameObject       collisionEffect;
 	public MapContstraints 	mapConstraints;
 	public float 			startSpeed;
 	public float 			startDelay;
@@ -161,7 +161,7 @@ public class UniversalBallController : MonoBehaviour {
 
 	void OnCollisionEnter( Collision coll ){
 
-//		Vector3 point = coll.contacts[0].point;
+		Vector3 point = coll.contacts[0].point;
 
 		// Increment the volley count if the ball collides with a paddle.
 		if (coll.gameObject.CompareTag ("Enemy") || coll.gameObject.CompareTag ("Player")) {

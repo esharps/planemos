@@ -11200,6 +11200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd26990619de3448b119682d0618b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEffect: {fileID: 0}
   mapConstraints: {fileID: 990300405}
   startSpeed: 20
   startDelay: 2
