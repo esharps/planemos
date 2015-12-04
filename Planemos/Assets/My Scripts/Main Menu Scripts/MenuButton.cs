@@ -18,7 +18,7 @@ public class MenuButton : MonoBehaviour {
 
     public void PlaySelected() {
         if (c.alpha >= 0.8)
-            Application.LoadLevel("Testing Menu");
+            Application.LoadLevel("GameplaySelectMenu");
     }
 
     public void OptionsSelected() {
@@ -38,10 +38,8 @@ public class MenuButton : MonoBehaviour {
 
     void Update () {
         if (GameObject.Find("Menu Options Rotator(Clone)") != null)
-            //Debug.Log("Found object");
             menuRotator = GameObject.Find("Menu Options Rotator(Clone)");
 
-        //Debug.Log(menuRotator.transform.eulerAngles.y > rotMin);
         if (MainMenuStartup.icons)
         {
             if (menuRotator.transform.eulerAngles.y > rotMin &&
@@ -51,7 +49,6 @@ public class MenuButton : MonoBehaviour {
             }
             else
             {
-
                 c.alpha -= fadeSpeed;
             }
 
