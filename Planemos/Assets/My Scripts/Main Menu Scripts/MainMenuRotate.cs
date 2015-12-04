@@ -6,7 +6,7 @@ public class MainMenuRotate : MonoBehaviour {
     private bool started = true;//false;
 
     // For when the player touches the menu
-    private float rotSpeed = 10.0f;
+    private float rotSpeed = 5.0f;
     private float lerpSpeed = 1.0f;
 
     private Vector3 speed;
