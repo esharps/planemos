@@ -40,10 +40,8 @@ public class MenuButton : MonoBehaviour {
 
     void Update () {
         if (GameObject.Find("Menu Options Rotator(Clone)") != null)
-            //Debug.Log("Found object");
             menuRotator = GameObject.Find("Menu Options Rotator(Clone)");
 
-        //Debug.Log(menuRotator.transform.eulerAngles.y > rotMin);
         if (MainMenuStartup.icons)
         {
             if (menuRotator.transform.eulerAngles.y > rotMin &&
@@ -53,7 +51,6 @@ public class MenuButton : MonoBehaviour {
             }
             else
             {
-
                 c.alpha -= fadeSpeed;
             }
 
