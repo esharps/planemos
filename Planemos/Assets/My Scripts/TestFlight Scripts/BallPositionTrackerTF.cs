@@ -20,7 +20,5 @@ public class BallPositionTrackerTF : MonoBehaviour {
 		ballPosX = ballPosition.x;
 		ballPosY = ballPosition.y;
 		ballPosZ = ballPosition.z;
-
-		Debug.Log (ballPosX);
 	}
 }

@@ -44,7 +44,7 @@ public class MainMenuRotate : MonoBehaviour {
 				dragging = true;
             }
             // Otherwise, slowly slow down rotation
-            else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+			else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
                 if (dragging)
                 {

@@ -2,6 +2,8 @@
 
 public class MapContstraints: MonoBehaviour {
 
+	public float xRange;
+	public float yRange;
 	public ObjectRangeOfMotion objectMotionField;
 	public PaddleRangeOfMotion paddleMotionField;
 	public AxisOfPlay axisOfPlay;

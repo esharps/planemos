@@ -8,26 +8,31 @@ public class UniversalBallController : MonoBehaviour {
 	public MapContstraints 	mapConstraints;
 	public float 			startSpeed;
 	public float 			startDelay;
+	public GameObject       collisionEffect;
 
 
-	const float velocityConstraint = 0.5f;
-	Rigidbody rb;
-	bool ballInPlay = false;
-	int volleyCount = 0;
-	float speed;
-	ObjectRangeOfMotion motionField;
-	AxisOfPlay axisOfPlay;
-	Vector3 english;
-	RigidbodyConstraints rbConstraints;
+	const float             velocityConstraint  = 0.5f;
+	bool                    ballInPlay          = false;
+	int                     volleyCount         = 0;
+	GameObject              collisionEffectInst;
+	ParticleSystem          collisionParticles;
+	Rigidbody               rb;
+	float                   speed;
+	ObjectRangeOfMotion     motionField;
+	AxisOfPlay              axisOfPlay;
+	Vector3                 english;
+	RigidbodyConstraints    rbConstraints;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
-		rb.maxAngularVelocity = 50;
-		speed = startSpeed;
-		motionField = mapConstraints.objectMotionField;
-		axisOfPlay = mapConstraints.axisOfPlay;
-		english = Vector3.zero;
+		rb                      = GetComponent<Rigidbody> ();
+		rb.maxAngularVelocity   = 50;
+		speed                   = startSpeed;
+		motionField             = mapConstraints.objectMotionField;
+		axisOfPlay              = mapConstraints.axisOfPlay;
+		english                 = Vector3.zero;
+		collisionEffectInst     = Instantiate(collisionEffect);
+		collisionParticles      = collisionEffectInst.GetComponent<ParticleSystem>();
 
 		if(motionField == ObjectRangeOfMotion.PLANAR) {
 			rbConstraints = RigidbodyConstraints.FreezePositionY;
@@ -35,8 +40,8 @@ public class UniversalBallController : MonoBehaviour {
 
 		rb.constraints = RigidbodyConstraints.FreezeAll;
 
-		ScoreManager.playerScore = 0; //Emily
-		ScoreManager.enemyScore = 0; //Emily
+		ScoreManager.playerScore    = 0; //Emily
+		ScoreManager.enemyScore     = 0; //Emily
 
 	}
 
@@ -111,7 +116,7 @@ public class UniversalBallController : MonoBehaviour {
 		float angle = Vector3.Angle ( new Vector3(0, 0, 1), rb.velocity );
 		float adjustToAngle = 0.0f;
 
-		if( angle > 60 ){
+		if( motionField == ObjectRangeOfMotion.PLANAR && angle > 60 ){
 			float x = rb.velocity.x;
 			float z = rb.velocity.z;
 			if( z > 0 ){
@@ -160,6 +165,13 @@ public class UniversalBallController : MonoBehaviour {
 
 	void OnCollisionEnter( Collision coll ){
 
+		Vector3 point = coll.contacts[0].point;
+		Vector3 norm = coll.contacts[0].normal;
+
+		collisionEffectInst.transform.position = point;
+		collisionEffectInst.transform.rotation = Quaternion.FromToRotation(Vector3.forward, -norm);
+		collisionParticles.Play();
+
 		// Increment the volley count if the ball collides with a paddle.
 		if (coll.gameObject.CompareTag ("Enemy") || coll.gameObject.CompareTag ("Player")) {
 			PaddleEnglish pe = coll.gameObject.GetComponent<PaddleEnglish>();
@@ -177,6 +189,6 @@ public class UniversalBallController : MonoBehaviour {
 	
 
 //	void OnCollisionExit( Collision c ){
-//		ResetVelocity();
+//
 //	}
 }
