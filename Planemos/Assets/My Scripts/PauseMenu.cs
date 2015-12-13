@@ -26,8 +26,12 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
-	public void ReturnToMain(){
-		Application.LoadLevel("Main Menu");
+	public void ReturnToMainiPad(){
+		Application.LoadLevel("Main Menu iPad Master");
+	}
+
+	public void ReturnToMainiPhone(){
+		Application.LoadLevel ("Main Menu iPhone Master");
 	}
 
 	public void Restart(){

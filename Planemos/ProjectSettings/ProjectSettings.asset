@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 7
   AndroidProfiler: 0
   defaultScreenOrientation: 3
-  targetDevice: 1
+  targetDevice: 2
   targetResolution: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -86,7 +86,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.emzillabot.planemos
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0

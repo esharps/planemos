@@ -3,12 +3,20 @@ using System.Collections;
 
 public class GameplaySelectMenu: MonoBehaviour {
 	
-	public void TopDownSelected(){
-		Application.LoadLevel ("Top Down 2D iPad TF2");
+	public void TopDownSelectediPhone(){
+		Application.LoadLevel ("Top Down 2D iPhone Master");
 	}
 	
-	public void FirstPersonSelected(){
-		Application.LoadLevel ("Continuum iPad TF2.1");
+	public void FirstPersonSelectediPhone(){
+		Application.LoadLevel ("Continuum iPhone Master");
+	}
+
+	public void TopDownSelectediPad(){
+		Application.LoadLevel ("Top Down 2D iPad Master");
+	}
+	
+	public void FirstPersonSelectediPad(){
+		Application.LoadLevel ("Continuum iPad Master");
 	}
 
 	public void QuitSelected() {

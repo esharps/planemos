@@ -17,8 +17,31 @@ public class MenuButton : MonoBehaviour {
 	}
 
     public void PlaySelected() {
-        if (c.alpha >= 0.8)
-            Application.LoadLevel("GameplayMenu");
+        if (c.alpha >= 0.8) {
+
+			//iPhone 5
+			if (Screen.currentResolution.ToString ().Contains ("1136"))
+				Application.LoadLevel ("Gameplay Menu iPhone Master");
+			//iPhone 6
+			else if (Screen.currentResolution.ToString ().Contains ("1334"))
+				Application.LoadLevel ("Gameplay Menu iPhone Master");
+		
+			//iPhone 6S
+			else if (Screen.currentResolution.ToString ().Contains ("2208"))
+				Application.LoadLevel ("Gameplay Menu iPhone Master");
+		
+			//iPad Mini
+			else if (Screen.currentResolution.ToString ().Contains ("1024"))
+				Application.LoadLevel ("Gameplay Menu iPad Master");
+		
+			//iPad Air
+			else if (Screen.currentResolution.ToString ().Contains ("2048"))
+				Application.LoadLevel ("Gameplay Menu iPad Master");
+			else
+				Application.LoadLevel ("Gameplay Menu iPad Master");
+           
+			// Application.LoadLevel("GameplayMenu");
+		}
     }
 
     public void OptionsSelected() {
