@@ -6,10 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/My Scenes/Main Menu.unity
+    path: Assets/production/My Scenes/Master Build/Team Splash Screen Master.unity
   - enabled: 1
-    path: Assets/My Scenes/GameplayMenu.unity
+    path: Assets/production/My Scenes/Master Build/Main Menu iPad Master.unity
   - enabled: 1
-    path: Assets/My Scenes/Top Down 2D iPad TF2.unity
+    path: Assets/production/My Scenes/Master Build/Main Menu iPhone Master.unity
   - enabled: 1
-    path: Assets/My Scenes/Continuum iPad TF2.1.unity
+    path: Assets/production/My Scenes/Master Build/Gameplay Menu iPad Master.unity
+  - enabled: 1
+    path: Assets/production/My Scenes/Master Build/Gameplay Menu iPhone Master.unity
+  - enabled: 1
+    path: Assets/production/My Scenes/Master Build/Top Down 2D iPad Master.unity
+  - enabled: 1
+    path: Assets/production/My Scenes/Master Build/Top Down 2D iPhone Master.unity
+  - enabled: 1
+    path: Assets/production/My Scenes/Master Build/Continuum iPad Master.unity
+  - enabled: 1
+    path: Assets/production/My Scenes/Master Build/Continuum iPhone Master.unity
