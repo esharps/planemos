@@ -2931,21 +2931,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11494472, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+    - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
-    - target: {fileID: 11494472, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+    - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Continue
-      objectReference: {fileID: 0}
-    - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 485031365}
-    - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMainiPad
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 11463818, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2955,21 +2947,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
       objectReference: {fileID: 0}
-    - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+    - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 485031365}
-    - target: {fileID: 11416928, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+    - target: {fileID: 11499430, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
+      value: ReturnToMainiPad
       objectReference: {fileID: 0}
-    - target: {fileID: 160832, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487668, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
-      propertyPath: m_ReferenceResolution.x
-      value: 800
+    - target: {fileID: 11494472, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 485031365}
+    - target: {fileID: 11494472, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 606e228fa1ef54e1c94026ad81720830, type: 2}
@@ -4645,11 +4637,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11464996, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
       propertyPath: m_ReferenceResolution.x
-      value: 800
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 11464996, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
       propertyPath: m_ReferenceResolution.y
-      value: 600
+      value: 768
       objectReference: {fileID: 0}
     - target: {fileID: 22463676, guid: 2533f919f3ae6d04b844945684b57c6b, type: 2}
       propertyPath: m_SizeDelta.x
