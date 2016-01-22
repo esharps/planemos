@@ -10,6 +10,9 @@ TagManager:
   - Portal
   - 4:3 Preset
   - 16:9 Preset
+  - ScoreSensor
+  - EnemyScoring
+  - PlayerScoring
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Grav Objects
   - Grav Objext Bounds
-  - 
+  - Raycast Only
   - 
   - 
   - 
@@ -44,6 +47,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI
+    uniqueID: 243666783
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

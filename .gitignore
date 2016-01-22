@@ -19,4 +19,8 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
+# OSx specific folder view config file
 .DS_Store
+
+Art Assets/2D Sprites/.DS_Store
